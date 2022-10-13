@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<HTML lang="en" dir="ltr">
+<HEAD>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+		
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Un document bilingue</TITLE>
+<style>
+	.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background: #d4302a;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 49%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 400;
+    color: #fff;
+    background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #000000;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</HEAD>
+<BODY>
+<p>
+  <script language="JavaScript1.2" >
+function Verification(theForm)
+{
+	if((document.forms[0].club.value == null) || (document.forms[0].club.value == ''))
+	{
+		alert("Veuillez remplir votre club S.V.P.");
+		document.forms[0].club.focus();
+		return false;
+	}
+	else
+	{
+		if((document.forms[0].Password.value == null) || (document.forms[0].Password.value == ''))
+		{
+			alert("Veuillez remplir votre Password S.V.P.");
+			document.forms[0].Password.focus();
+			return false;
+		}
+	}
+	return true;
+}
+
+</script>
+
+
+  
+
+</p>
+	
+
+<!-- <form  name="form1" method="post" action= "ident.php" onSubmit= "writecookie()"  >
+<p align="center">
+<h2 align="center"><strong>Identification</strong>
+</h2>
+<table align="center">
+	<tr>
+		<td width="91"><b>Login</b></td>
+		<td width="144"><input type="text" name="id"></td>
+	</tr>
+	<tr>
+		<td><b>PW</b></td>
+		<td><input type="Password" name="password"></td>
+	</tr>
+</table>
+
+ <p>&nbsp;</p>
+ <tr>
+	<td>
+	  <div align="center">
+	    <input type="Submit" name="Submit" value="Valider"  > 
+      </div></td>
+  </tr>
+</form> -->
+<div class="container login-container">
+	<div class="row">
+		<div class="col-md-6 login-form-1">
+			<img  src="image/fond.png" width="350" class="center">
+		</div>
+		<div class="col-md-6 login-form-2">
+			
+			<form  name="form1" method="post" action= "ident.php" onSubmit= "writecookie()" >
+				<h3>Connectez-vous </h3>
+				<br>
+				<div class="form-group">
+					<input type="text" class="form-control" name="id" placeholder="Identifiant*" value=""  required/>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Mot de passe *" value="" name="password" required />
+				</div>
+						
+			<button type="submit" class="btnSubmit form-group">Identifier</button>
+            <button type="button" class="btnSubmit form-group">Enregistrer</button>
+	
+				<div  class="form-group">
+
+					<a href="#" class="ForgetPwd" value="Login">Mot de passe oublié?</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>

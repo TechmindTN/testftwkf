@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Softricks Popup date picker Test Page</title>
+<SCRIPT  LANGUAGE="JavaScript1.2" SRC="Calendar1-903.js"></SCRIPT>
+<SCRIPT Language="Javascript">
+function TryCallFunction() {
+	var sd = document.MForm.mydate1.value.split("-");
+	document.MForm.iday.value = sd[1];
+	document.MForm.imonth.value = sd[0];
+	document.MForm.iyear.value = sd[2];
+}
+var styleVar = "td { font-family:Courier; font-size:12 }";
+</SCRIPT>
+<LINK REL="stylesheet" TYPE="text/css" HREF="Calendar.css">
+</head>
+
+<body>
+<h2>Softricks Popup date picker Test Page</h2>
+
+<form name="MForm" action="tutorial.html">
+Control String: <TEXTAREA ROWS=5 COLS=30 name=txt_custom>AppendOrReplace=Replace;AppendChar=';';CloseOnSelect=Yes;ReturnData=Date;Title=Calendar;InlineX=400;InlineY=50;SelectAfter=Today-360;SelectBefore=Today+360;AllowWeekends=No;Resizable=Yes;CallFunction=TryCallFunction;PopupX=300;PopupY=300;Nav=Yes;SmartNav=Yes;ShowFix=Yes;Fix=Yes;WeekStart=1;Weekends=06;ShortNoms=No;Holidays=0901,1225,0101,0704,1008;AllowHolidays=Yes;</textarea>
+<BR><BR>
+
+Date Format: <select name="txt_format">
+<option value="MM/DD/YYYY">MM/DD/YYYY</option>
+<option value="MM/DD/YY">MM/DD/YY</option>
+<option value="MM-DD-YYYY">MM-DD-YYYY</option>
+<option value="MM-DD-YY">MM-DD-YY</option>
+<option value="DD/MON/YYYY">DD/MON/YYYY</option>
+<option value="DD/MON/YY">DD/MON/YY</option>
+<option SELECTED value="DD-MON-YYYY">DD-MON-YYYY</option>
+<option value="DD-MON-YY">DD-MON-YY</option>
+<option value="DD/MONTH/YYYY">DD/MONTH/YYYY</option>
+<option value="DD/MONTH/YY">DD/MONTH/YY</option>
+<option value="DD-MONTH-YYYY">DD-MONTH-YYYY</option>
+<option value="DD-MONTH-YY">DD-MONTH-YY</option>
+<option value="MONTH DD, YYYY">MONTH DD, YYYY</option>
+<option value="DD/MM/YYYY">DD/MM/YYYY</option>
+<option value="DD/MM/YY">DD/MM/YY</option>
+<option value="DOW, DD-MON-YY">DOW, DD-MON-YY</option>
+<OPTION value="YYYY-MM-DD">YYYY-MM-DD</OPTION>
+</select>
+<BR><BR>
+
+Month: <select name="txt_month">
+<option value="0">January</option>
+<option value="1">February</option>
+<option value="2">March</option>
+<option value="3">April</option>
+<option value="4">May</option>
+<option value="5">June</option>
+<option value="6">July</option>
+<option value="7">August</option>
+<option value="8">September</option>
+<option value="9">October</option>
+<option value="10">November</option>
+<option value="11">December</option>
+</select>
+
+Year: <input type="text" name="txt_year" value="" size="5"><BR><BR><BR>
+
+
+<input type="Reset" value="Reset">
+<TABLE BORDER=1>
+<TR>
+<TD VALIGN=TOP>
+<input type="button" value="Yearly Calendar" name="ypick" onClick="show_yearly_calendar('MForm.mydate1', MForm.txt_year.value, MForm.txt_format.options[txt_format.selectedIndex].value)"><BR>
+
+<input type="button" value="Inline Calendar" name="mpick1" onClick="show_calendar('MForm.mydate1', MForm.txt_month.options[txt_month.selectedIndex].value, MForm.txt_year.value, MForm.txt_format.options[txt_format.selectedIndex].value, 'INLINE', MForm.txt_custom.value)" onMouseOver="this.style.cursor='hand';"><BR>
+
+<input type="button" value="Popup Calendar" name="mpick3" onClick="show_calendar('MForm.mydate1', MForm.txt_month.options[txt_month.selectedIndex].value, MForm.txt_year.value, MForm.txt_format.options[txt_format.selectedIndex].value, null, MForm.txt_custom.value)"><BR>
+
+<a href="javascript:void(0);" onClick="show_calendar('MForm.mydate1',null,'','MM/DD/YYYY','','Title=FROM Date;CurrentDate=<MForm.mydata>;Fix=Yes;')">From</A> ---
+<a href="#" onClick="show_calendar('MForm.mydate2',null,'','YYYY-MM-DD','','Title=TO Date;CurrentDate=2002-04-22;Fix=No')">To</A>
+</TD>
+
+<TD VALIGN=TOP>
+Date #1 Selected: <input type="text" name="mydate1" value=""><BR>
+<input type="text" name="iday" value="Day">
+<input type="text" name="imonth" value="Month">
+<input type="text" name="iyear" value="Year"><BR><BR>
+Date #2 Selected: <input type="text" name="mydate2" value=""><BR>
+<input type="text" name="mydata" value="08/09/1985"><BR>
+<BR>
+<input type="button" value="Default Calendar" name="mpick3" onClick="show_calendar('MForm.mydate1')">
+</form>
+
+<!-- A Separate Layer for the Calendar -->
+<!-- Make sure to use the name Calendar for this layer -->
+<SCRIPT Language="Javascript" TYPE="text/javascript">
+Calendar.CreateCalendarLayer(10, 275, "");
+</SCRIPT>
+</TD></TR></TABLE>
+</body>
+</html>
