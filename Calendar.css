@@ -1,0 +1,200 @@
+.calBody {
+	margin-left:0px;
+	margin-top:0px;
+}
+.caltd {
+	border:1px solid #ffffff;
+	padding:0;
+}
+
+/* Calendar title */
+.titleStyle {
+	background-color: #990000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/* Month Year and Fix */
+.headerStyle {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: #990000;
+	vertical-align:top;
+}
+
+/* Together these 2 define the color theme for the window */
+.borderColor {
+	background-color: #c7b7b7;
+	border-top: solid #990000 1px;
+	border-right: solid #990000 1px;
+	border-bottom: solid #990000 1px;
+	border-left: solid #990000 1px;
+}
+.innerColor {
+	background-color: #c7b7b7;
+}
+
+/* Smart Nav Styles */
+.monthEntryStyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #990000;
+}
+.yearEntryStyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #990000;
+}
+.yearArrowStyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #990000;
+}
+
+/* Nav Style */
+.navStyle {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #000099;
+	border:1px solid #ffffff;
+}
+
+.weekdayHeaderStyle {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: normal;
+	width:;
+	color: #990000;
+}
+/* Just a slightly wider Header column */
+.weekdayHeaderStyleW {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: normal;
+	width:16%;
+	color: #990000;
+}
+
+/* Calendar Main Body Styles */
+.mainCalendarStyle {
+	border:1px solid #ffffff;
+}
+
+/* Calendar Data Styles */
+.normalStyle {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	border:1px solid #ffffff;
+	padding:0;
+	width:;
+	text-align:center;
+}
+.dimStyle {
+	background-color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #b0b0b0;
+	border:1px solid #ffffff;
+	padding:0;
+	width:;
+	text-align:center;
+}
+.linkStyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	text-decoration:none;
+	display:block;
+}
+.linkStyle:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #ffffff;
+	text-decoration:underline;
+	background-color:#FF0000;
+}
+
+.todayStyle {
+	background-color: #ff0000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #00ffff;
+	border:1px solid #ffffff;
+	padding:0;
+	width:;
+	text-align:center;
+}
+
+/* Style for weekends */
+.weekendStyle {
+	background-color: #e0e0e0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	border:1px solid #ffffff;
+	padding:0;
+	text-align:center;
+}
+.dimWeekendStyle {
+	background-color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #b0b0b0;
+	border:1px solid #ffffff;
+	padding:0;
+	text-align:center;
+}
+
+/* Style for holidays */
+.holidayStyle {
+	background-color: #990000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #ffffff;
+	border:1px solid #ffffff;
+	padding:0;
+	text-align:center;
+}
+.holidayLinkStyle {
+	background-color: #990000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #ffffff;
+	text-decoration: underline;
+	text-align:center;
+}
+
+.selectedDateStyle {
+	background-color: #990000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #ffff00;
+	text-align:center;
+}
+
+/* Time Picker styles */
+.tp_Normal {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+}
+.tp_borderColor {
+	background-color: #c7b7b7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	border-top: solid #990000 1px;
+	border-right: solid #990000 1px;
+	border-bottom: solid #990000 1px;
+	border-left: solid #990000 1px;
+}
