@@ -1,4 +1,5 @@
 <?php
+$nbr=1;
 session_start();
 if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "fr"; }
 if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
@@ -393,6 +394,8 @@ Total :
 <?php echo $rowy[0];}?>
 <thead>	
 <tr>
+<td ><div align="center"><strong> </strong> </div> </td>
+
 	    <td ><div align="center"><strong><?=$_TXT[0]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong><?=$_TXT[4]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[5]?></strong> </div> </td>
@@ -459,6 +462,9 @@ if ($etat == "1") {
 <?php }else {?>
 	<tr style="overflow: auto;">
 <?php }?>
+<td><div align="center"><?php echo $nbr;
+$nbr++;
+?></div></td>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
 	  <td><div align="center"><?php echo $lic;?></div></td>

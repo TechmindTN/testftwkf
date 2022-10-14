@@ -2,21 +2,21 @@
 
 
 
- define("SERVEUR","localhost");
+//  define("SERVEUR","localhost");
 
- define("USER",'root');
+//  define("USER",'root');
 
- define("PASS",'');
+//  define("PASS",'');
 
- define("DB","ftwkfor1_basephp");
+//  define("DB","ftwkfor1_basephp");
 
-//define("SERVEUR","127.0.0.1");
+define("SERVEUR","127.0.0.1");
 
-//define("USER",'root');
+define("USER",'root');
 
-//define("PASS",'');
+define("PASS",'');
 
-//define("DB","kungfuwuyvlic");
+define("DB","kungfu_local");
 
 
 
