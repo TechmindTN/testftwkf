@@ -353,7 +353,7 @@ body {
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -383,63 +383,38 @@ body {
  <div class="col-sm-4 mb-3 mb-sm-0">
 
  Nom
-  <input class="form-control form-control-user" name="nom" type="text" id="nom" tabindex="1" size="25">
+  <input required class="form-control form-control-user" name="nom" type="text" id="nom" tabindex="1" size="25">
   </div>
   <div class="col-sm-4 mb-3 mb-sm-0">
   Prénom 
-  <input class="form-control form-control-user" name="prenom" type="text" id="prenom" tabindex="2" size="25">
+  <input required class="form-control form-control-user" name="prenom" type="text" id="prenom" tabindex="2" size="25">
   </div>
   <div class="col-sm-4 mb-3 mb-sm-0">
   Sexe
-  <select class="form-control form-control-user" name="sexe" size="1" id="sexe" tabindex="13">
+  <select required class="form-control form-control-user" name="sexe" size="1" id="sexe" tabindex="13">
         <option> </option>        <option>ذكر</option>
         <option>أنثى</option>
 </select>
 </div>
 
+
+
 </div>
 </br>
+
 <div class="form-group row">
 <div class="col-sm-4 mb-3 mb-sm-0">
 
 Discipline
-<select class="form-control form-control-user" name="sport" size="1" id="sport" tabindex="6">
+<select required class="form-control form-control-user" name="sport" size="1" id="sport" tabindex="6">
         <option></option>        <option></option>
         <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>
         </div>
         <div class="col-sm-4 mb-3 mb-sm-0">
 
-        Grade
-        <select class="form-control form-control-user" name="grade" size="1" id="grade" tabindex="12">
-                <option>-</option>
-       <option>DAN1</option>
-        <option>DAN2</option>
-        <option>DAN3</option>
-        <option>DAN4</option>
-        <option>DAN5</option>
-        <option>DAN6</option>
-        <option>DAN7</option>
-      </select>
-      </div>
-      <div class="col-sm-4 mb-3 mb-sm-0">
-
-      Degre
-      <select class="form-control form-control-user" name="degre" size="1" id="degre" tabindex="9">
-        <option>-</option>
-        <option>مدرب فدرالي</option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-      </select>
-      </div>
-      </div>
-      </br>
-      <div class="form-group row">
-      <div class="col-sm-4 mb-3 mb-sm-0">
-
       Grade Arbitrage
-      <select class="form-control form-control-user" name="gradear" size="1" id="degre2" tabindex="9">
-        <option>-</option>
+      <select required class="form-control form-control-user" name="gradear" size="1" id="degre2" tabindex="9">
+        <option></option>
         <option>درجة اولى</option>
         <option>درجة ثانية</option>
         <option>درجة ثالثه</option>
@@ -450,35 +425,34 @@ Discipline
         <option>دولي</option>
       </select>
       </div>
-      <div class="col-sm-4 mb-3 mb-sm-0">
-
-      Type 
-      <select class="form-control form-control-user" name="type" size="1" id="type" tabindex="14">
-        <option>حكم</option>
-      </select>
-      </div>
+      
       <div class="col-sm-4 mb-3 mb-sm-0">
 
       Date Naissance
-      <input class="form-control form-control-user small" name="naiss" type="date" id="naiss" tabindex="1" size="15">
+      <input required class="form-control form-control-user small" name="naiss" type="date" id="naiss" tabindex="1" size="15">
       </div>
       </div>
+       
+      </div>
+      
       </br>
       <div class="form-group row">
-      <div class="col-sm-4 mb-3 mb-sm-0">
+      <div class="col-sm-1 mb-1 mb-sm-0">
+</div>
+      <div class="col-sm-3 mb-3 mb-sm-0">
 
       CIN
-      <input class="form-control form-control-user" name="cin" type="number" id="nom2" tabindex="1" size="25" value="<?php echo $cin;?>">
+      <input required class="form-control form-control-user" name="cin" type="number" id="nom2" tabindex="1" size="25" value="<?php echo $cin;?>">
       </div>
       <div class="col-sm-4 mb-3 mb-sm-0">
 
       Photo
-      <input name="photo" type="file" id="photo" size="1" tabindex="15">
+      <input required name="photo" type="file" id="photo" size="1" tabindex="15">
       </div>
       <div class="col-sm-4 mb-3 mb-sm-0">
 
       Diplome
-      <input name="photo2" type="file" id="diplome" size="1" tabindex="15">
+      <input required name="photo2" type="file" id="diplome" size="1" tabindex="15">
       </div>
       </div>
       </br>
@@ -489,7 +463,7 @@ Discipline
   
   </center>
 </form>
-</div></div></div></div></div></div></div>
+</div></div></div></div></div></div>
 
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

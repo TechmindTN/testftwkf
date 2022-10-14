@@ -147,7 +147,7 @@ document.forms[0].submit();
 <form
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" >
     <div class="input-group">
-        <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+    <input required type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
             aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button">
@@ -163,8 +163,8 @@ document.forms[0].submit();
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <form method="post">
-      <input type="submit" name="lang" value="fr" class="btn"/>
-      <input type="submit" name="lang" value="ar" class="btn"/>
+      <input required type="submit" name="lang" value="fr" class="btn"/>
+      <input required type="submit" name="lang" value="ar" class="btn"/>
       <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
 
     </form>
@@ -183,7 +183,7 @@ document.forms[0].submit();
             aria-labelledby="searchDropdown">
             <form class="form-inline mr-auto w-100 navbar-search">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small"
+                    <input required type="text" class="form-control bg-light border-0 small"
                         placeholder="Rechercher..." aria-label="Search"
                         aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -339,7 +339,7 @@ document.forms[0].submit();
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -368,11 +368,11 @@ document.forms[0].submit();
 
 <div class="col-sm-4 mb-3 mb-sm-0">
 <label><?=$_TXT[6]?></label>
-    <input name="nom" type="text" id="nom" tabindex="1" size="25" class="form-control">
+    <input required name="nom" type="text" id="nom" tabindex="1" size="25" class="form-control">
   </div> 
 <div class="col-sm-4 mb-3 mb-sm-2">
   <label><?=$_TXT[7]?></label>
-  <input name="prenom" type="text" id="prenom" tabindex="2" size="25" class="form-control" >
+  <input required name="prenom" type="text" id="prenom" tabindex="2" size="25" class="form-control" >
 </div>  
 <div class="col-sm-4 mb-1 mb-sm-0">
 <label><?=$_TXT[10]?></label>
@@ -418,22 +418,7 @@ document.forms[0].submit();
 </div>
 <div class="form-group row">
 
-	<div class="col-sm-4 mb-3 mb-sm-0">
-	<label> <?=$_TXT[89]?></label>
-
-    <select name="gradear" size="1" id="degre2" tabindex="9" class="custom-select">
-        <option>-</option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-        <option>جهوي</option>
-        <option>مغاربي</option>
-        <option>قاري</option>
-        <option>إفريقي</option>
-        <option>دولي</option>
-      </select>
-
-    </div> 
+	
 	<div class="col-sm-4 mb-3 mb-sm-2">
     <label><?=$_TXT[60]?></label>
 <select name="type" size="1" id="type" tabindex="14" class="custom-select">
@@ -447,7 +432,7 @@ document.forms[0].submit();
 	</div>  
 	<div class="col-sm-4 mb-1 mb-sm-0">
   <label><?=$_TXT[9]?> </label>
-      <input name="naiss" type="date" id="naiss" tabindex="1" size="15" class="form-control">
+      <input required name="naiss" type="date" id="naiss" tabindex="1" size="15" class="form-control">
 </div>	
 	  
 </div>
@@ -456,17 +441,17 @@ document.forms[0].submit();
 	<div class="col-sm-4 mb-3 mb-sm-0">
 	<label><?=$_TXT[5]?></label>
 
-  <input name="cin" type="number" id="nom2" tabindex="1" size="25" class="form-control">
+  <input required name="cin" type="number" id="nom2" tabindex="1" size="25" class="form-control">
     
     </div> 
 	<div class="col-sm-4 mb-3 mb-sm-2">
     <label><?=$_TXT[15]?></label>
-   <input name="photo" type="file" id="photo" size="1" tabindex="15"class="custom-file">
+   <input required name="photo" type="file" id="photo" size="1" tabindex="15"class="custom-file">
 
 	</div>  
 	<div class="col-sm-4 mb-1 mb-sm-0">
   <label><?=$_TXT[34]?></label>
-     <input name="diplome" type="file" id="diplome" size="1" tabindex="15"class="custom-file">
+     <input required name="diplome" type="file" id="diplome" size="1" tabindex="15"class="custom-file">
     </div>			
 	  
 </div>             
@@ -475,7 +460,7 @@ document.forms[0].submit();
 <table width="100%" border="0">
     </table>
 <p align="center">
-      <input type="submit" name="valider" id="valider" value=<?=$_TXT[57]?> class="btn btn-primary">
+      <input  type="submit" name="valider" id="valider" value=<?=$_TXT[57]?> class="btn btn-primary">
   </p>
 </form>
 </div></div></div></div></div></div></div>  

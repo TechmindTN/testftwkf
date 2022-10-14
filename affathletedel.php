@@ -298,7 +298,7 @@ $row01 = mysql_fetch_row($result01);
                 Journal d'activit�
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 D�connexion
             </a>
@@ -408,7 +408,6 @@ do {
       <td><div align="center"><?php echo $row['raison'];?></div></td>
 
       <td>
-        <div align="center"><a href ='licenceverifdel.php?naiss<?php echo "=$row[date_naiss]";?>&club<?php echo "=$row[club]";?>&nom<?php echo "=$row[nom]";?>&prenom<?php echo "=$row[prenom]";?>&code<?php echo "=$row[n_lic]";?>'><b><?=$_TXT[29]?></b></a></div>
      
         <?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>

@@ -308,7 +308,7 @@ $result0001 = mysql_query($query0001,$connexion);
 $row0001 = mysql_fetch_assoc($result0001);
 $tprix =0;
 do {
-	$saison0=$row0001['saison'];;
+$saison0=$row0001['saison'];;
 $club0=$row0001['club'];;
 $age1 = $row000['cat'];
 $sexe1 = $row000['sexe'];
@@ -379,9 +379,10 @@ if ((($percentn >50) or ($percentpn >50)or($percentn1 >50) or ($percentpn1 >50))
 
 
 ?>
-	<tr bgcolor="#FF0000" style="color:#fff">
+	<tr bgcolor="#FF0000">
+    
 <?php }else {?>
-	<tr>
+	<tr  >
 <?php }?>
 
 
@@ -446,7 +447,7 @@ if ($bilan >0){
 	<tr>
 <?php }else{
 ?>
-	<tr bgcolor="#FF0000" >
+	<tr >
 <?php }
 ?>
 

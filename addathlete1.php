@@ -122,9 +122,9 @@ else
   <table width="100%" border="0">
     <tr>
       <td width="" rowspan="2" align="left">الاسم</td>
-      <td width="" rowspan="2" align="left"><input name="nom" type="text" id="nom" tabindex="1" size="25" value ="<?php echo $nom;?>"></td>
+      <td width="" rowspan="2" align="left"><input required required required required required name="nom" type="text" id="nom" tabindex="1" size="25" value ="<?php echo $nom;?>"></td>
       <td width="" rowspan="2" align="left">اللقب </td>
-      <td width="" rowspan="2" align="left"><input name="prenom" type="text" id="prenom" tabindex="2" size="25" value ="<?php echo $prenom;?>"></td>
+      <td width="" rowspan="2" align="left"><input required required name="prenom" type="text" id="prenom" tabindex="2" size="25" value ="<?php echo $prenom;?>"></td>
       <td width="12%" rowspan="2" align="left">تاريخ الولادة</td>
       <td width="4%" align="center">يوم</td>
       <td width="4%" align="center">شهر</td>
@@ -136,15 +136,15 @@ else
     </tr>
 
     <tr>
-      <td align="center"><input name="jour" type="text" id="jour" tabindex="3" size="4" maxlength="2" value ="<?php echo $jour;?>"></td>
-      <td align="center"><input name="mois" type="text" id="mois" tabindex="4" size="4" maxlength="2" value ="<?php echo $mois;?>"></td>
-      <td align="left"><input name="annee" type="text" id="annee" tabindex="5" size="8" maxlength="4" value ="<?php echo $annee;?>"></td>
+      <td align="center"><input required name="jour" type="text" id="jour" tabindex="3" size="4" maxlength="2" value ="<?php echo $jour;?>"></td>
+      <td align="center"><input required name="mois" type="text" id="mois" tabindex="4" size="4" maxlength="2" value ="<?php echo $mois;?>"></td>
+      <td align="left"><input required name="annee" type="text" id="annee" tabindex="5" size="8" maxlength="4" value ="<?php echo $annee;?>"></td>
     </tr>
        </table>
 <table width="100%" border="0">
     <tr>
       <td width="" align="left">رقم ب ت و</td>
-      <td width="" align="left"><input name="cin" type="number" id="cin" tabindex="7" size="25" value ="<?php echo $cin;?>"></td>
+      <td width="" align="left"><input required name="cin" type="number" id="cin" tabindex="7" size="25" value ="<?php echo $cin;?>"></td>
       <td width="" align="left">الجنس</td>
       <td width="" align="left"><select name="sexe" size="1" id="sexe" tabindex="9">
         <option><?php echo $sexe;?></option>
@@ -152,7 +152,7 @@ else
         <option>أنثى</option>
       </select></td>
       <td width="" align="left">الجنسية</td>
-      <td align="left"><input name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value ="<?php echo $nationalite;?>"></td>
+      <td align="left"><input required name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value ="<?php echo $nationalite;?>"></td>
       
     </tr>
      </table>
@@ -194,7 +194,7 @@ else
 ?>
       </select></td>
 	  <td>رقم الإجازة</td>
-      <td align="left"><input name="lic" type="text" id="prenom2" tabindex="2" size="25" value =""></td>
+      <td align="left"><input required name="lic" type="text" id="prenom2" tabindex="2" size="25" value =""></td>
     </tr>
   </table>
 

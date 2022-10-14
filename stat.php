@@ -41,7 +41,7 @@ window.location.href="login.php";
 <?php
 	   	include('connect.php');
 
-$query ="SELECT saison from athletes group by saison order by saison";
+$query ="SELECT saison FROM `saison`";
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 
@@ -296,7 +296,7 @@ if (isset($_POST['club'])) {
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -319,6 +319,7 @@ if (isset($_POST['club'])) {
     <form name="stat" method="post" action="">
 
 	<div class="form-group row"><div class="col-sm-1 mb-3 mb-sm-0"></div>
+    <?php if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ ?>
 	<div class="col-sm-3 mb-3 mb-sm-0">
 	<label><?=$_TXT[87]?></label>
 		<select name="crit" size="1" id="Discipline" tabindex="9" class="custom-select">
@@ -326,7 +327,7 @@ if (isset($_POST['club'])) {
           <option>جهات</option>
           <option>نوادي</option>
         </select>
-</div> 
+</div> <?php }?>
 				 <div class="col-sm-3 mb-3 mb-sm-2">
                                
 				 <label><?=$_TXT[0]?></label>
@@ -391,9 +392,11 @@ if ($crit == "نوادي"){$critere = "club";}
 <table class="table " id="dataTable"  border="1">
 	<tr class="text-center">
 	    <td ><strong>الموسم</strong></td>
+
+        <?php if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ ?>
        <?php if ($crit == "جهات"){ ?>   <td ><strong>/الجهة</strong> </td><?php } ?>
-       <?php if ($crit == "نوادي"){ ?> <td > <strong>/النادي</strong> </td><?php } ?>
-       </td>
+       <?php if ($crit == "نوادي"){ ?> <td > <strong>/النادي</strong> </td><?php }  } else {?>
+       <td><strong>Club</strong></td><?php } ?>
 	    <td ><strong>ممرنين</strong></td>
 	    <td ><strong>مدرب فدرالي
 </strong></td>
@@ -404,11 +407,11 @@ if ($crit == "نوادي"){$critere = "club";}
 	    <td ><strong>المجموع العام</strong></td>
 	</tr>
 <?php 
-
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query0 ="select ligue from entraineur where saison = '$saison' group by ligue order by ligue";}
 if ($crit == "نوادي"){$query0 ="select club from entraineur where saison = '$saison' group by club order by club";}
 
-
+}
 $result0 = mysql_query($query0,$connexion);
 $row0 = mysql_fetch_assoc($result0);
 
@@ -423,14 +426,21 @@ if ($crit == "نوادي"){$test = $row0['club'];}
 ?>
 	<tr>
 	  <td><div align="center"><?php echo $saison;?></div></td>
-	  <td><div align="center"><?php echo $test;?></div></td>
+       <?php if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ ?>
+	  <td><div align="center"><?php echo $test;?></div></td> <?php }  else {?>
+      <td><?php echo $club;?></td>
 
 
 
-                      <?php
+                      <?php }
+
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'ممرن'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'ممرن'";}
+} else{
+    $query ="SELECT * FROM entraineur where saison = '$saison' and type = 'ممرن' and club='$club'  ";
 
+}
 
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
@@ -440,8 +450,16 @@ $nb = mysql_num_rows($result);
 
 
                       <?php
+                      if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'مدرب فدرالي '";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'مدرب فدرالي'";}
+                      } else {
+                        $query ="SELECT * FROM entraineur where saison = '$saison' and club = '$club' and type = 'مدرب فدرالي'";
+
+                      }
+                      
+
+
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
@@ -449,8 +467,15 @@ $nb = mysql_num_rows($result);
 
 
                       <?php
+ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'حكم'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'حكم'";}
+ } else {
+    $query ="SELECT * FROM entraineur where saison = '$saison' and club = '$club' and type = 'حكم'";
+
+ }
+
+
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
@@ -459,8 +484,14 @@ $nb = mysql_num_rows($result);
 
 
                       <?php
+ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'مسير'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'مسير'";}
+ } else {
+    $query ="SELECT * FROM entraineur where saison = '$saison' and club='$club' and type = 'مسير'";
+
+ }
+
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
@@ -469,15 +500,26 @@ $nb = mysql_num_rows($result);
 
 
                       <?php
+ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'مرافق'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'مرافق'";}
+ } else{
+
+    $query ="SELECT * FROM entraineur where saison = '$saison' and club = '$club' and type = 'مرافق'";
+ }
+
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
 	  <td align="center"><strong><?php echo $nb;?></strong></td>
       <?php
+ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test' and type = 'محب'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test' and type = 'محب'";}
+ } else {
+    $query ="SELECT * FROM entraineur where saison = '$saison' and club = '$club' and type = 'محب'";
+    
+ }
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
@@ -486,8 +528,12 @@ $nb = mysql_num_rows($result);
 
 
                       <?php
+                     if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
 if ($crit == "جهات"){$query ="SELECT * FROM entraineur where saison = '$saison' and ligue = '$test'";}
 if ($crit == "نوادي"){$query ="SELECT * FROM entraineur where saison = '$saison' and club = '$test'";}
+                     } else {
+                        $query ="SELECT * FROM entraineur where saison = '$saison' and club = '$club'";
+                     }
 $result = mysql_query($query,$connexion);
 $nb = mysql_num_rows($result);
 									 ?>
@@ -502,6 +548,7 @@ $nb = mysql_num_rows($result);
 
   </tr>
 <?php					}while	 ($row0=mysql_fetch_assoc($result0)); 
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
 ?>
 	<tr>
 	  <td colspan="2"><div align="center"><strong>المجموع العام</strong></div></div></td>
@@ -576,7 +623,7 @@ $nb = mysql_num_rows($result);
 
 </table></div></div>
 </div></div></div>
-<?php 
+<?php }
 ?>
 <script>
    function printthis(){

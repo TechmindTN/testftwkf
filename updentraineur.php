@@ -294,7 +294,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -395,20 +395,7 @@ if ($type == "مدرب فدرالي"){ $uploaddird ='./photoentrf/' ; }
                                   
                                 </div>
                                 <div class="form-group row">
-<div class="col-sm-4 mb-3 mb-sm-0">
-                                      <label >Grade Arbitrage :   </label>
-                                      <select name="gradear" size="1" id="degre2" tabindex="9"class="custom-select" >
-        <option><?php echo $row['arbitrage'];?></option>
-        <option>-</option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-         <option>جهوي</option>
-       <option>مغاربي</option>
-        <option>قاري</option>
-        <option>إفريقي</option>
-        <option>دولي</option>
-      </select>                                    </div>
+
                                     <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label>Type : </label>
                                     <select name="type" size="1" id="type" tabindex="9" class="custom-select">

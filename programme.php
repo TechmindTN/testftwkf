@@ -135,7 +135,7 @@ $row = mysql_fetch_assoc($result);
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <form method="post">
       <input type="submit" name="lang" value="fr" class="btn"/>
-      <input type="submit" name="lang" value="ar" class="btn"/>
+      <input required required required required required type="submit" name="lang" value="ar" class="btn"/>
       <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
 
     </form>
@@ -154,7 +154,7 @@ $row = mysql_fetch_assoc($result);
             aria-labelledby="searchDropdown">
             <form class="form-inline mr-auto w-100 navbar-search">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small"
+                    <input required required type="text" class="form-control bg-light border-0 small"
                         placeholder="Rechercher..." aria-label="Search"
                         aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -310,7 +310,7 @@ $row = mysql_fetch_assoc($result);
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -339,32 +339,32 @@ $row = mysql_fetch_assoc($result);
                                  <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label><?=$_TXT[59]?>     </label>
-                                        <input name="action" type="text" id="action" tabindex="1" size="70" class="form-control " 
+                                        <input  name="action" type="text" id="action" tabindex="1" size="70" class="form-control " 
                                      required> 
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label><?=$_TXT[14]?></label>
                                     
-                                    <select name="sport" size="1" id="sport" tabindex="6" class="custom-select " required>
-        <option>Choisir...  </option>        
+                                    <select required name="sport" size="1" id="sport" tabindex="6" class="custom-select " required>
+        <option> </option>        
         <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label><?=$_TXT[61]?></label>
                                     
-                                        <input name="lieu" type="text" id="lieu" tabindex="3" size="25" class="form-control " required>
+                                        <input required name="lieu" type="text" id="lieu" tabindex="3" size="25" class="form-control " required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label><?=$_TXT[84]?>    </label>
                                         
-                                     <input name="annee" type="text" id="annee" tabindex="12" size="15" class="form-control " required>
+                                     <input required name="annee" type="text" id="annee" tabindex="12" size="15" class="form-control " required>
                                     </div>
                                     <div class="col-sm-4  mb-3 mb-sm-0">
                                     <label><?=$_TXT[96]?> </label>
-                                    <select name="niveau" size="1" id="niveau" tabindex="5"  class="custom-select " required>
-                                    <option selected>Choisir niveau</option>
+                                    <select  required name="niveau" size="1" id="niveau" tabindex="5"  class="custom-select " required>
+                                    <option ></option>
                                     <option>Eliminatoire</option>
         <option>Final Directe</option>
         <option>Final Après Eliminatoire</option>
@@ -372,28 +372,28 @@ $row = mysql_fetch_assoc($result);
                                     </div>
                                     <div class="col-sm-4">
                                     <label><?=$_TXT[43]?></label>
-                                    <input name="date" type="date" id="date" tabindex="6" size="15" class="form-control " required>
+                                    <input required name="date" type="date" id="date" tabindex="6" size="15" class="form-control " required>
                                         
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label><?=$_TXT[62]?>     </label>
-                                        <input name="delais" type="date" id="delais" tabindex="12" size="15" class="form-control " required>
+                                        <input required name="delais" type="date" id="delais" tabindex="12" size="15" class="form-control " required>
                                      
                                     </div>
                                     <div class="col-sm-4">
                                     <label><?=$_TXT[60]?> </label>
-                                    <select name="type" size="1" id="type2" tabindex="5" class="custom-select " required>
-           <option selected>Choisir type</option>
+                                    <select  required name="type" size="1" id="type2" tabindex="5" class="custom-select " required>
+           <option ></option>
      <option>كطا</option>
         <option>فردي</option>
       </select>
                     </div>
                                     <div class="col-sm-4  mb-3 mb-sm-0">
                                     <label><?=$_TXT[11]?></label>
-                                    <select name="cat" size="1" id="type" tabindex="2"  class="custom-select " required>
-        <option>_</option>
+                                    <select  required name="cat" size="1" id="type" tabindex="2"  class="custom-select " required>
+        <option></option>
         <?php     do { 
                                      $res=$row['cat'];
                                       echo "<option >$res</option>";
@@ -405,7 +405,7 @@ $row = mysql_fetch_assoc($result);
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label><?=$_TXT[71]?>     </label>
-                                        <input name="min" type="text" id="min" tabindex="12" size="15" class="form-control "
+                                        <input required name="min" type="text" id="min" tabindex="12" size="15" class="form-control "
                                      required>
                                         
                                     </div>

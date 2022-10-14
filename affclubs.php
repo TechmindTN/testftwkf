@@ -75,7 +75,7 @@ $resultw = mysql_query($queryw,$connexion);
 $roww = mysql_fetch_row($resultw);
 $saison1 = $roww[0];
 if ($saison == "") {$saison = $saison1;}
-$querys ="SELECT saison from clubb group by saison order by saison";	 
+$querys ="SELECT saison FROM `saison`";	 
 $results = mysql_query($querys,$connexion);
 $rows = mysql_fetch_assoc($results);
 
@@ -311,7 +311,7 @@ $rows = mysql_fetch_assoc($results);
                 Journal d'activit�
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 D�connexion
             </a>

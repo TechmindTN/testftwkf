@@ -110,7 +110,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 <form
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" >
     <div class="input-group">
-        <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+        <input required type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
             aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button">
@@ -126,8 +126,8 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <form method="post">
-      <input type="submit" name="lang" value="fr" class="btn"/>
-      <input type="submit" name="lang" value="ar" class="btn"/>
+      <input required type="submit" name="lang" value="fr" class="btn"/>
+      <input required type="submit" name="lang" value="ar" class="btn"/>
       <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
 
     </form>
@@ -146,7 +146,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
             aria-labelledby="searchDropdown">
             <form class="form-inline mr-auto w-100 navbar-search">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small"
+                    <input required type="text" class="form-control bg-light border-0 small"
                         placeholder="Rechercher..." aria-label="Search"
                         aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -302,7 +302,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -330,15 +330,15 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                             <form class="user" action="addclub.php" method="post" enctype="multipart/form-data" name="MForm">
                                 <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="club" name="club"
+                                        <input required  type="text" class="form-control form-control-user" id="club" name="club"
                                             placeholder=<?=$_TXT[12]?> tabindex="1" required>
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="ligue" name="ligue"
+                                        <input required type="text" class="form-control form-control-user" id="ligue" name="ligue"
                                             placeholder=<?=$_TXT[13]?>  tabindex="2" required>
                                     </div> 
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user"
+                                    <input required type="password" class="form-control form-control-user"
                                             id="pw" placeholder=<?=$_TXT[66]?> name="pw" tabindex="1" maxlenghth="4" required>
                                     </div> 
                                  

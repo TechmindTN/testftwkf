@@ -294,7 +294,7 @@ lang="<?=$_SESSION["lang"]?>">
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -322,7 +322,7 @@ lang="<?=$_SESSION["lang"]?>">
 <?php
 	   	include('connect.php');
 
-$query ="SELECT saison from athletes group by saison order by saison";
+$query ="SELECT saison FROM `saison`";
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 

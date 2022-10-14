@@ -310,7 +310,7 @@ body {
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -387,30 +387,6 @@ if ($type == "مرافق"){ $uploaddird ='./diplomeacc/' ; }
         <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>                                      
                                     </div> 
                                     <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label>Grade</label>
-                                        <select name="grade" size="1" id="grade" tabindex="12" class="form-control">
-        <option> <?php echo $row['grade'];?></option>        <option>DAN1</option>
-        <option>DAN2</option>
-        <option>DAN3</option>
-        <option>DAN4</option>
-        <option>DAN5</option>
-        <option>DAN6</option>
-</select >                                     
-                                    </div>
-                                    <div class="col-sm-4  mb-3 mb-sm-0">
-                                    <label>Degre</label>
-                                      
-                                    <select name="degre" size="1" id="degre" tabindex="9" class="form-control">
-        <option><?php echo $row['degre'];?> </option>
-        <option>مدرب فدرالي</option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-      </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
- <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label>      Grade Arbitrage
 </label>
 
@@ -427,18 +403,17 @@ if ($type == "مرافق"){ $uploaddird ='./diplomeacc/' ; }
         <option>دولي</option>
       </select>                                      
                                     </div> 
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label>Type</label>
-                                        <select name="type" size="1" id="type" tabindex="9" class="form-control">
-        <option><?php echo $row['type'];?></option>
-      </select>                                      
-                                    </div>
+                                    
                                     <div class="col-sm-4  mb-3 mb-sm-0">
                                     <label>      Date Naissance
 </label>
 <input name="naiss" type="date" id="naiss" tabindex="1" size="15" value="<?php echo $row['naiss'];?>" class="form-control form-control-user">
 
                                     </div>
+                                    
+                                </div>
+                                <div class="form-group row">
+ 
                                 </div>
                                 <div class="form-group row">
  <div class="col-sm-4 mb-3 mb-sm-0">

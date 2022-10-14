@@ -21,6 +21,9 @@ $query ="SELECT club FROM club where club = '$club'";
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 $club = $row['club'];
+$query1 ="SELECT club FROM club";
+$result1 = mysql_query($query1,$connexion);
+$row1 = mysql_fetch_assoc($result1);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -158,7 +161,7 @@ document.forms[0].submit();
 <form
     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" >
     <div class="input-group">
-        <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+        <input required required type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
             aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button">
@@ -174,8 +177,8 @@ document.forms[0].submit();
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <form method="post">
-      <input type="submit" name="lang" value="fr" class="btn"/>
-      <input type="submit" name="lang" value="ar" class="btn"/>
+      <input required type="submit" name="lang" value="fr" class="btn"/>
+      <input required type="submit" name="lang" value="ar" class="btn"/>
       <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
 
     </form>
@@ -194,7 +197,7 @@ document.forms[0].submit();
             aria-labelledby="searchDropdown">
             <form class="form-inline mr-auto w-100 navbar-search">
                 <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small"
+                    <input required type="text" class="form-control bg-light border-0 small"
                         placeholder="Rechercher..." aria-label="Search"
                         aria-describedby="basic-addon2">
                     <div class="input-group-append">
@@ -350,7 +353,7 @@ document.forms[0].submit();
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -378,17 +381,17 @@ document.forms[0].submit();
   <div class="form-group row">
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label ><?=$_TXT[6]?></label>
-                                        <input name="nom" type="text" id="nom" tabindex="1" size="25" value ="" class="form-control form-control-user"   >
+                                        <input required name="nom" type="text" id="nom" tabindex="1" size="25" value ="" class="form-control form-control-user"   >
                                     </div>
                                     <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label><?=$_TXT[7]?> </label>
-                                        <input name="prenom" type="text" id="prenom" value =""   class="form-control form-control-user" required >
+                                        <input required name="prenom" type="text" id="prenom" value =""   class="form-control form-control-user" required >
                                     </div>
                                 
                                
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label><?=$_TXT[5]?></label>
-                                    <input name="cin" type="number" id="cin" tabindex="7" size="25" value ="" class="form-control form-control-user" required>
+                                    <input required name="cin" type="number" id="cin" tabindex="7" size="25" value ="" class="form-control form-control-user" required>
                                     </div>
                                   
                                 </div>
@@ -396,11 +399,11 @@ document.forms[0].submit();
                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                 <label><?=$_TXT[9]?> </label>
                                      <div class="form-group row">
-                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>Jour </label> <input name="jour" type="number" id="jour" tabindex="3" size="4" maxlength="2" value =""  class="form-control form-control-user" required></div> 
+                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>Jour </label> <input required name="jour" type="number" id="jour" tabindex="3" size="4" maxlength="2" value =""  class="form-control form-control-user" required></div> 
                                    <div class="col-sm-4 mb-3 mb-sm-0"> <label>Mois </label>
-                                   <input required name="mois" type="number" id="mois" tabindex="4" size="4" maxlength="2" value ="" class="form-control form-control-user">
+                                   <input required required name="mois" type="number" id="mois" tabindex="4" size="4" maxlength="2" value ="" class="form-control form-control-user">
                                   </div> 
-                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>année</label> <input required name="annee" type="number" id="annee" tabindex="5" size="8" maxlength="4" value ="" class="form-control form-control-user"></div></div>
+                                   <div class="col-sm-4 mb-3 mb-sm-0"><label>année</label> <input required required name="annee" type="number" id="annee" tabindex="5" size="8" maxlength="4" value ="" class="form-control form-control-user"></div></div>
                                      
                                   </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
@@ -413,7 +416,7 @@ document.forms[0].submit();
                                   </div>
                                   <div class="col-sm-4 mb-3 mb-sm-0">
                                   <label><?=$_TXT[8]?> </label>
-                                  <input required name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value ="" class="form-control form-control-user">
+                                  <input required required name="nationalite" type="text" id="nationalite" tabindex="10" size="25" value ="" class="form-control form-control-user">
                                   
                                   </div>
                                   </div>
@@ -430,33 +433,58 @@ document.forms[0].submit();
         <option>فوت وات فان فوداوو و الأنشطة التابعة</option>
         <option>هابكيدو</option><option>الكيسندو</option></select>
                                     </div>
-                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
-                                    <label><?=$_TXT[15]?></label>
-                                    <input name="photo" type="file" id="photo" size="1" tabindex="15" class="form-control-file" required>
+                                    <?php if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) {	 ?>
+                                           <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <label ><?=$_TXT[12]?>   </label>
+                                      <select name="club" size="1" id="club" tabindex="6" class="form-control form-control-user" required>
+                                      <option></option>
+                                      <?php
+					   do { 
+                                     $res=$row1['club'];
+                                      echo "<option >$res</option>";
+                       } while ($row1 = mysql_fetch_assoc($result1));
+                    
+?>
                                     </div>
+                                    <?php } ?>
+                                    
+                                   
                                 
                                
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label><?=$_TXT[25]?></label>
-                                    <input name="photoid" type="file" id="photoid" size="1" tabindex="15"  class="form-control-file" required>
-                                    </div>
+                                    
                                   
                                 </div>
+                                
                                                                           
                                 <div class="form-group row">
+                                <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+                                <label><?=$_TXT[15]?></label>
+                                    <input style="visibility: hidden;"   type="file" size="1" tabindex="15" class="form-control-file" >
+                                    </div> 
+                                <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+                                <label><?=$_TXT[15]?></label>
+                                    <input required name="photo" type="file" id="photo" size="1" tabindex="15" class="form-control-file" required>
+                                    </div> 
+                                 <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label><?=$_TXT[25]?></label>
+                                    <input required name="photoid" type="file" id="photoid" size="1" tabindex="15"  class="form-control-file" required>
+                                    </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                 <label><?=$_TXT[26]?> </label>
                                      
-                                <input name="photobor" type="file" id="photobor" size="1" tabindex="15" class="form-control-file" required>
+                                <input required name="photobor" type="file" id="photobor" size="1" tabindex="15" class="form-control-file" required>
                                   </div>
+                    </div>
+                                  <div class="form-group row">
                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                   <div class="col-sm-4 mb-3 mb-sm-0 text-center">
-                                  <input name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
+                                  <input required name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
   <p align="center"><br>
-      <input type="submit" name="valider" id="valider" value=<?=$_TXT[57]?> class="btn btn-primary">
+      <input required type="submit" name="valider" id="valider" value=<?=$_TXT[57]?> class="btn btn-primary">
   </p>
                                   </div>
                                   </div>
+                    </div>
  
 </div>
 	  

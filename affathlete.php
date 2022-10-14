@@ -300,7 +300,7 @@ $club = $_SESSION['club'];
                 Journal d'activité
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                 Déconnexion
             </a>
@@ -340,7 +340,7 @@ $result1 = mysql_query($query1,$connexion);
 $row1 = mysql_fetch_row($result1);
 $saison = $row1[0];
 if ($saison1 == "") {$saison1 = $saison;}
-$query01 ="SELECT saison FROM athletes group by saison order by saison";
+$query01 ="SELECT saison FROM `saison`";
 $result01 = mysql_query($query01,$connexion);
 $row01 = mysql_fetch_row($result01);
 
@@ -501,8 +501,6 @@ if (file_exists($filename)) {
  ?>
 
  
- 
- 
     </td>
     <?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
@@ -519,7 +517,7 @@ if (file_exists($filename)) {
      
         
         </td>   <?PHP  } ?> 
-  
+ 
   </tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
 

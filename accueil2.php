@@ -41,14 +41,20 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
 
     // $query2 ="SELECT count(*) from `entraineurs` where saison='$saison'";
 $querymon='SELECT count(*) as nbr,extract(month from date_saisie) as dat FROM `athletes` as a where date_saisie > (select datedebut from saison as s where actif=1) and date_saisie < (select datefin from saison as s where actif=1) group by Extract(Month from date_saisie) ';
+
+
+$result = mysql_query($query,$connexion);
+$row = mysql_fetch_row($result);
 }
 else{
-
+    $query01 ="SELECT saison FROM saison where actif = 1";
+    $result01 = mysql_query($query01,$connexion);
+    $row01 = mysql_fetch_row($result01);
+    $saisons = $row01[0];
     $queryatt1 ="SELECT count(*) FROM athletes where club='$club' and saison=(select saison from saison where actif='1')";
     $queryatt2 ="SELECT count(*) FROM athletess  where club='$club' and saison=(select saison from saison where actif='1')";
     $queryatt3 ="SELECT count(*) FROM athletedel where club='$club' and saison=(select saison from saison where actif='1')";
-    $queryatt4 ="SELECT * FROM `entraineur` where type ='حكم' and saison=(select saison from saison where actif='1')";
-    $query ="SELECT count(*)  FROM club where club='$club' and saison=(select saison from saison where actif='1')";
+    $queryatt4 ="SELECT count(*) FROM `entraineur` where type ='حكم'  and club='$club' and saison=(select saison from saison where actif='1') ";
   
     $query2 ="SELECT count(*) as total2 from entraineurs where club='$club' and saison=saison=(select saison from saison where actif='1')";
     $querymon='SELECT count(*) as nbr,extract(month from date_saisie) as dat FROM `athletes` as a where club="$club"  and date_saisie > (select datedebut from saison as s where actif=1) and date_saisie < (select datefin from saison as s where actif=1) group by Extract(Month from date_saisie) ';
@@ -85,8 +91,6 @@ do{
 }while($j<count($monthstats));
 
 
-$result = mysql_query($query,$connexion);
-$row = mysql_fetch_row($result);
 
 
 
@@ -381,7 +385,7 @@ $saison = $row01[0];
                                     Journal d'activité
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php" data-bs-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Déconnexion
                                 </a>
