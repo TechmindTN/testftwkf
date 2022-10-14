@@ -30,6 +30,7 @@ $club = $_SESSION['club'];
 </HEAD>
 <BODY  lang="<?=$_SESSION["lang"]?>" id="page-top">
 <?php
+$nbr=1;
 	   	include('connect.php');
  $club1 = "";
  $saison1 = "";
@@ -351,6 +352,8 @@ $row01 = mysql_fetch_row($result01);
                             <div class="table-responsive">
 <table class="table table-bordered"  width="100%" id="dataTable">
 	<thead><tr>
+    <td><div align="center"></div></td>
+
 	    <td ><div align="center"><strong><?=$_TXT[0]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[4]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[5]?> </strong> </div> </td>
@@ -391,6 +394,7 @@ do {
 
 ?>
 	<tr>
+    <td><div align="center"><?php echo $nbr;?></div></td>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
 	  <td><div align="center"><?php echo $row['n_lic'];?></div></td>
@@ -410,6 +414,7 @@ do {
       <td>
      
         <?PHP 
+        $nbr++;
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
           
      

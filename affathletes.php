@@ -319,6 +319,7 @@ $club = $_SESSION['club'];
                                
 
 <?php  
+$nbr=1;
 	   	include('connect.php');
 $query1 ="SELECT saison FROM saison where actif = 1";
 $result1 = mysql_query($query1,$connexion);
@@ -424,6 +425,8 @@ $rowy = mysql_fetch_row($resulty);
     
 	<thead><?php echo $rowy[0] ?>
 	<tr>
+    <td ><div align="center"><strong></strong> </div> </td>
+
 	    <td ><div align = "center"> <strong> <?=$_TXT[0]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong><?=$_TXT[4]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong><?=$_TXT[5]?> </strong> </div> </td>
@@ -470,6 +473,7 @@ if ($ren <> "") {
 <?php }else {?>
 	<tr>
 <?php }?>
+<td><div align="center"><?php echo $nbr;?></div></td>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
 	  <td><div align="center"><?php echo $row['n_lic'];?></div></td>
@@ -487,7 +491,7 @@ if ($ren <> "") {
 	  <td><div align="center"><?php echo $row['sport'];?></div></td>
 
 <?php 
-
+$nbr++;
 if ($ren <> "") {
  $phott = $row['photo'];
  ?>

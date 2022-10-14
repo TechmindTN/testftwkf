@@ -1,4 +1,5 @@
 <?php
+$nbr=1;
 session_start();
 //$club = $_SESSION['club'];
 $club = $_SESSION['club'];
@@ -386,6 +387,8 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
 <table  class="table table-bordered"  id="dataTable">
 <thead>
 	<tr>
+    <td ><div align="center" > </div> </td>
+
 	    <td ><div align="center" ><strong>Saison </strong> </div> </td>
 		<td> <div align = "center"> <strong> N° Lic </strong> </div> </td>
 		<td> <div align = "center"> <strong> CIN </strong> </div> </td>
@@ -423,6 +426,9 @@ do {
 ?>
 
 	<tr>
+    <td><div align="center"><?php echo $nbr;
+    $nbr++;
+    ?></div></td>
 
 	  <td><div align="center"><?php echo $row4['saison'];?></div></td>
 	  <td><div align="center"><?php echo $row4['n_lic'];?></div></td>

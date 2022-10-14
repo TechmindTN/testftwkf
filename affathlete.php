@@ -436,6 +436,7 @@ if ($club1 == "") {$query ="SELECT * FROM athletes where saison = '$saison1'";}
 $result = mysql_query($query,$connexion);
 $totalRows = mysql_num_rows($result);
 $row = mysql_fetch_assoc($result);
+$nbr=1
 ?>       
 <br>
 
@@ -448,6 +449,8 @@ Total :
 <?php echo $rowy[0];?>
 	<thead>
   <tr>
+  <td ><div align="center"><strong></strong> </div> </td>
+
 	    <td ><div align="center"><strong><?=$_TXT[0]?></strong> </div> </td>
 		<td> <div align = "center"> <strong><?=$_TXT[4]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[5]?></strong> </div> </td>
@@ -461,7 +464,8 @@ Total :
 		<td> <div align = "center"> <strong> <?=$_TXT[13]?></strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[14]?></strong> </div> </td>
 		<td> <div align = "center"> <strong> <?=$_TXT[15]?></strong> </div> </td>
-        <?php if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) {	 ?>
+        <?php 
+        if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) {	 ?>
 
         <td ><div align = "center"> <strong><?=$_TXT[23]?> </strong> </div> </td>
     </tr>
@@ -480,6 +484,7 @@ do {
 ?>
 
 	<tr>
+    <td><div align="center"><?php echo $nbr;?></div></td>
 
 	  <td><div align="center"><?php echo $row['saison'];?></div></td>
 	  <td><div align="center"><?php echo $row['n_lic'];?></div></td>
@@ -499,6 +504,8 @@ do {
       
  
        <?php 
+               $nbr++;
+
 	   $extension = strrchr($row['photo'], ".") ;
 	   $nphot = strstr($row['photo'], ".",true) ;
 $filename = './photo/'.$nphot.'.jpg';

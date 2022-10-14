@@ -1,4 +1,5 @@
 <?php
+$nbr =1;
 session_start();
 if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "fr"; }
 if (isset($_POST["lang"])) { $_SESSION["lang"] = $_POST["lang"]; }
@@ -386,6 +387,8 @@ Total :
 <?php echo $rowy[0];?>
 <thead>
                                         <tr>
+                                        <th></th>
+
                                             <th><?=$_TXT[12]?></th>
                                             <th><?=$_TXT[13]?></th>                                            
                                             <th><?=$_TXT[65]?></th>
@@ -408,6 +411,10 @@ $row = mysql_fetch_assoc($result);
 
 do {?>
 	<tr>
+    <td><div align="center"><?php echo $nbr;
+    $nbr++;
+    ?></div></td>
+
 	  <td><div align="center"><?php echo $row['club'];?></div></td>
 	  <td><div align="center"><?php echo $row['ligue'];?></div></td>
 	  <td><div align="center"><?php echo $row['club'];?></div></td>
