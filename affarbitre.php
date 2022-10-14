@@ -72,6 +72,25 @@ else{
 $result4 = mysql_query($query4,$connexion);
 $row4 = mysql_fetch_assoc($result4);
 
+if(($sai=="")and($cl=='Tous')){
+    $querye ="SELECT count(*) FROM entraineur  ";
+}else if(($sai=="")and($cl!='Tous')){
+    $querye ="SELECT count(*) FROM `entraineur` where club='".$cl."' and type = 'حكم'";
+
+}
+else if(($sai!="")and($cl=='Tous')){
+    $querye ="SELECT count(*) FROM `entraineur` where saison='".$sai."' and type = 'حكم'";
+
+}
+else{
+    $querye ="SELECT count(*) FROM `entraineur` where club='".$cl."' and saison='".$sai."' and type = 'حكم'";
+
+}
+
+$resulty = mysql_query($querye,$connexion);
+$rowy = mysql_fetch_row($resulty);
+
+
 
 ?>
 <script>
@@ -384,6 +403,11 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
 <div class="card-body">
 	<div class="table-responsive">
 <table  class="table table-bordered"  id="dataTable">
+<?php
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
+?>
+    Total :
+<?php echo $rowy[0]; }?>
 <thead>
 	<tr>
 	    <td ><div align="center" ><strong>Saison </strong> </div> </td>

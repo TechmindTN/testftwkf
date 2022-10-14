@@ -444,8 +444,11 @@ $row = mysql_fetch_assoc($result);
 <div class="card-body">
                             <div class="table-responsive">
 <table class="table table-bordered" width="100%" id="Table1"  >
+<?php
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
+?>
 Total :
-<?php echo $rowy[0];?>
+<?php echo $rowy[0]; }?>
 	<thead>
   <tr>
 	    <td ><div align="center"><strong><?=$_TXT[0]?></strong> </div> </td>

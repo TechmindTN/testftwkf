@@ -20,7 +20,7 @@ window.location.href="login.php";
 <HTML lang="en" dir="ltr">
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>Modification des Athl�tes</TITLE>
+<TITLE>Modification des Athlete</TITLE>
 <script language="JavaScript" src="Calendar1-903.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 function TryCallFunction() {

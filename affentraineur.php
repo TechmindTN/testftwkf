@@ -321,6 +321,32 @@ if (isset($_POST['sais'])) {
 $query001 ="SELECT club FROM entraineur where saison like '%$saison1%' group by club order by club";
 $result001 = mysql_query($query001,$connexion);
 $row001 = mysql_fetch_assoc($result001);
+
+
+if(($saison1=="")and($club1=='')){
+    $querye ="SELECT count(*) FROM entraineur ";
+}else if(($saison1=="")and($club1!='')){
+    $querye ="SELECT count(*)  FROM entraineur where club like '%$club1%'";
+
+}
+else if(($saison1!="")and($club1=='')){
+    $querye ="SELECT count(*)  FROM entraineur where saison = '$saison1' ";
+
+}
+else{
+    $querye ="SELECT count(*)  FROM entraineur where saison = '$saison1' and club like '%$club1%' ";;
+
+}
+
+$resulty = mysql_query($querye,$connexion);
+$rowy = mysql_fetch_row($resulty);
+
+
+
+
+
+
+
 ?>
 
 
@@ -360,7 +386,11 @@ $row001 = mysql_fetch_assoc($result001);
       <div class="card-body">
                             <div class="table-responsive">
 <table class="table table-bordered" id="dataTable" cellspacing="0" width="20%"  >
-  
+<?php
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
+?>
+Total :
+<?php echo $rowy[0];}?>
 <thead>	
 <tr>
 	    <td ><div align="center"><strong><?=$_TXT[0]?> </strong> </div> </td>

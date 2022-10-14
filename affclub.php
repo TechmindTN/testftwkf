@@ -382,8 +382,11 @@ $rowy = mysql_fetch_row($resulty);
 
 <div class="table-responsive">
 <table class="table table-bordered text-center" id="dataTable" >
+<?php
+if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
+?>
 Total :
-<?php echo $rowy[0];?>
+<?php echo $rowy[0];}?>
 <thead>
                                         <tr>
                                             <th><?=$_TXT[12]?></th>

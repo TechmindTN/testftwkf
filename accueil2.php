@@ -36,7 +36,7 @@ if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){
     $queryatt2 ="SELECT count(*) FROM athletess  WHERE saison=(select saison from saison where actif='1')";
     $queryatt3 ="SELECT count(*) FROM athletedel WHERE saison=(select saison from saison where actif='1')";
     $queryatt4 ="SELECT count(*) FROM `entraineur` where type ='حكم' and saison=(select saison from saison where actif='1')";
-    $query ="SELECT COUNT(*) FROM `club` WHERE actif='1'";
+    $query ="SELECT COUNT(*) FROM `clubb` WHERE  saison=(select saison from saison where actif='1')";
     $query2 =" SELECT count(*) FROM `entraineurs` WHERE saison=(select saison from saison where actif='1')";
 
     // $query2 ="SELECT count(*) from `entraineurs` where saison='$saison'";
