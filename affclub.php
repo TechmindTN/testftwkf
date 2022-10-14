@@ -303,7 +303,10 @@ window.location.href="login.php";
 <?php
 include('connect.php');
 
-
+$query1 ="SELECT saison FROM saison where actif = 1";
+$result1 = mysql_query($query1,$connexion);
+$row1 = mysql_fetch_row($result1);
+$saison = $row1[0];
  $club1 = "";
 if (isset($_POST['club'])) {
   $club1 = (get_magic_quotes_gpc()) ? $_POST['club'] : addslashes($_POST['club']);}
@@ -311,8 +314,25 @@ if (isset($_POST['club'])) {
 if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) {
 $query1 ="SELECT club from club order by club";	 
 $result1 = mysql_query($query1,$connexion);
-$row1 = mysql_fetch_assoc($result1);}
+$row1 = mysql_fetch_assoc($result1);
 
+
+if($club1!=""){
+    $querys ="SELECT count(*) FROM club where club='$club1' ";
+
+}
+else{
+    $querys ="SELECT count(*) FROM club  ";
+
+}
+
+}
+$resulty = mysql_query($querys,$connexion);
+$rowy = mysql_fetch_row($resulty);
+
+// $query2 ="SELECT distinct(saisons) from athletes order by club";	 
+// $result2 = mysql_query($query2,$connexion);
+// $row2 = mysql_fetch_assoc($result2);}
 
 ?>
 
@@ -352,6 +372,9 @@ $row1 = mysql_fetch_assoc($result1);}
       </td>
   </tr>
 </table>
+
+
+
                     </div>
 
 <div class="card-body">
@@ -359,6 +382,8 @@ $row1 = mysql_fetch_assoc($result1);}
 
 <div class="table-responsive">
 <table class="table table-bordered text-center" id="dataTable" >
+Total :
+<?php echo $rowy[0];?>
 <thead>
                                         <tr>
                                             <th><?=$_TXT[12]?></th>

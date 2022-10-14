@@ -75,13 +75,28 @@ $resultw = mysql_query($queryw,$connexion);
 $roww = mysql_fetch_row($resultw);
 $saison1 = $roww[0];
 if ($saison == "") {$saison = $saison1;}
-$querys ="SELECT saison FROM `saison`";	 
-$results = mysql_query($querys,$connexion);
-$rows = mysql_fetch_assoc($results);
+$queryss ="SELECT saison FROM `saison`";	 
+$resultss = mysql_query($queryss,$connexion);
+$rows = mysql_fetch_assoc($resultss);
+
+}
+if(($saison=="")and($ligue=='')){
+    $querye ="SELECT count(*) FROM clubb  ";
+}else if(($saison=="")and($ligue!='')){
+    $querye ="SELECT count(*) FROM athletess where ligue like '%$ligue%' ";
+
+}
+else if(($saison!="")and($ligue=='')){
+    $querye ="SELECT count(*) FROM clubb where saison like '%$saison%'";
+
+}
+else{
+    $querye ="SELECT count(*) FROM clubb where club like '%$club1%' and saison like '%$saison%' and ligue like '%$ligue%'";
 
 }
 
-
+$resulty = mysql_query($querye,$connexion);
+$rowy = mysql_fetch_row($resulty);
 ?>
 <div id="wrapper">
 <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
@@ -353,7 +368,7 @@ if (($_SESSION['club'] == "ADMIN")or($_SESSION['club'] == "Admin")or($_SESSION['
 					   do { 
                                      $res=$rows['saison'];
                                       echo "<option >$res</option>";
-                       } while ($rows = mysql_fetch_assoc($results));
+                       } while ($rows = mysql_fetch_assoc($resultss));
 ?>
       </select></td>
       
@@ -407,6 +422,8 @@ if (($_SESSION['club'] == "ADMIN")or($_SESSION['club'] == "Admin")or($_SESSION['
 
 <div class="table-responsive">
 <table class="table table-bordered text-center" id="dataTable" >
+Total :
+<?php echo $rowy[0];?>
 <thead>
                                         <tr>
                                             <th><?=$_TXT[12]?></th>
@@ -419,9 +436,16 @@ if (($_SESSION['club'] == "ADMIN")or($_SESSION['club'] == "Admin")or($_SESSION['
                                         </thead>
 
                                         <?php
-if ($saison<>""){$query ="SELECT * FROM clubb where club like '%$club1%' and saison like '%$saison%' and ligue like '%$ligue%' ";}
-if ($saison==""){$query ="SELECT * FROM clubb order club";}
 
+
+if ($saison<>""){
+    
+    $query ="SELECT * FROM clubb where club like '%$club1%' and saison like '%$saison%' and ligue like '%$ligue%' ";}
+if ($saison==""){
+    $query ="SELECT * FROM clubb order club";}
+
+
+    
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 

@@ -381,21 +381,48 @@ $club=$row['club'];
 $query ="SELECT * FROM athletess where club = '$club' and saison = '$saison' order by n_lic";
 
 if (($club == "ADMIN")or($club == "admin")or($club == "Admin") or($club=="dtn")or($club=="DTN")or($club=="Dtn")){
-if ($club1 <> "") {$query ="SELECT * FROM athletess where club = '$club1' and saison = '$saison' and age like '%$age1' order by n_lic";}
-if ($club1 == "") {$query ="SELECT * FROM athletess where saison = '$saison' and age like '%$age1' order by n_lic";}
+
+    if ($club1 <> "") {
+        // $querys ="SELECT count(*) FROM athletess where club='$club1'";
+    $query ="SELECT * FROM athletess where club = '$club1' and saison = '$saison' and age like '%$age1' order by n_lic";}
+else if ($club1 == "") {
+    // $querys ="SELECT count(*) FROM athletess ";
+
+    $query ="SELECT * FROM athletess where saison = '$saison' and age like '%$age1' order by n_lic";}
+
+    if(($club1=="")and($age1=='')){
+        $querys ="SELECT count(*) FROM athletess where saison = '$saison' ";
+    }else if(($club1=="")and($age1!='')){
+        $querys ="SELECT count(*) FROM athletess where age='$age1' and saison = '$saison'";
+    
+    }
+    else if(($club1!="")and($age1=='')){
+        $querys ="SELECT count(*) FROM athletess where club='$club1' and saison = '$saison'";
+    
+    }
+    else{
+        $querys ="SELECT count(*) FROM athletess where club='$club1' and saison = '$saison' and age='$age1'";
+
+    }
+
+
 }
 
 $result = mysql_query($query,$connexion);
 $totalRows = mysql_num_rows($result);
 //query('SET NAMES UTF8');
 $row = mysql_fetch_assoc($result);
+
+$resulty = mysql_query($querys,$connexion);
+$rowy = mysql_fetch_row($resulty);
 ?>
 
 </div>
 <div class="card-body">
                             <div class="table-responsive">
 <table  class="table table-bordered" width="100%" id="dataTable">
-	<thead>
+    
+	<thead><?php echo $rowy[0] ?>
 	<tr>
 	    <td ><div align = "center"> <strong> <?=$_TXT[0]?> </strong> </div> </td>
 		<td> <div align = "center"> <strong><?=$_TXT[4]?> </strong> </div> </td>

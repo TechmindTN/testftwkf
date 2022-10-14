@@ -343,7 +343,21 @@ if ($saison1 == "") {$saison1 = $saison;}
 $query01 ="SELECT saison FROM `saison`";
 $result01 = mysql_query($query01,$connexion);
 $row01 = mysql_fetch_row($result01);
+if(($club1=="")and($saison1=='')){
+    $queryy ="SELECT count(*) FROM athletes ";
+}else if(($club1=="")and($saison1!='')){
+    $queryy ="SELECT count(*) FROM athletes where saison='$saison1'";
 
+}
+else if(($club1!="")and($saison1=='')){
+    $queryy ="SELECT count(*) FROM athletes where club='$club1'";
+
+}
+else{
+$queryy ="SELECT count(*) FROM athletes where club = '$club1' and saison = '$saison1'";
+}
+$resulty = mysql_query($queryy,$connexion);
+$rowy = mysql_fetch_row($resulty);
 
     if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")) {
 	?>
@@ -370,7 +384,6 @@ $row1 = mysql_fetch_assoc($result1);
    
  <form name="stat" method="post" action="">
 
-              
 
                 <table><tr><td> <?=$_TXT[0]?></td> 
    <td><select name="sais" size="1" id="sais" tabindex="9" class="custom-select " >
@@ -427,9 +440,12 @@ $row = mysql_fetch_assoc($result);
 <br>
 
 
+
 <div class="card-body">
                             <div class="table-responsive">
 <table class="table table-bordered" width="100%" id="Table1"  >
+Total :
+<?php echo $rowy[0];?>
 	<thead>
   <tr>
 	    <td ><div align="center"><strong><?=$_TXT[0]?></strong> </div> </td>
