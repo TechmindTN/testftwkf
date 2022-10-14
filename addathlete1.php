@@ -132,7 +132,7 @@ else
       <td width="8%" rowspan="2" align="left">الرياضة</td>
       <td width="4%" rowspan="2" align="center"><select name="sport" size="1" id="sport" tabindex="6">
         <option><?php echo $sport;?></option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option> <option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option></select><option>الكايزن</option></select><option>المصارعة الصينية</option></select><option>كمبو</option></select><option>الدفاع عن النفس بودو</option></select></td>
     </tr>
 
     <tr>

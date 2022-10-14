@@ -359,7 +359,7 @@ if (isset($_POST['ligue'])) {
         <td><select name="sport" size="1" id="Discipline" tabindex="9"  class="custom-select ">
           <option><?php echo $sport;?></option>
           <option></option>
-        <option>وشوكونغ فو</option>
+        <option>ووشوكونغ فو</option>
         <option>كمبو</option>
         <option>ديكايتو ريو</option>
         <option>الدفاع عن النفس بودو</option>

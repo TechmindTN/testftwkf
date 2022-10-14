@@ -368,7 +368,7 @@ if ($type == "مدرب فدرالي"){ $uploaddird ='./photoentrf/' ; }
                                       <label >Discipline :   </label>
                                       <select name="sport" size="1" id="sport" tabindex="6" class="custom-select">
         <option><?php echo $row['sport'];?></option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>                                    </div>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option><option>الكايزن</option><option>المصارعة الصينية</option><option>كمبو</option><option>الدفاع عن النفس بودو</option></select>
                                     <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label>Degre : </label>
                                     <select name="degre" size="1" id="degre" tabindex="9" class="custom-select">

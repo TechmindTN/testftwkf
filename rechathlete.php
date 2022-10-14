@@ -397,7 +397,7 @@ if (($totalRows > 0)){
       <td align="center"><?=$_TXT[84]?> <input name="annee" type="number" id="annee" tabindex="5"  maxlength="4" value ="<?php echo $annee;?>" class="form-control"></td>
       <td rowspan="2" align="center"><select name="sport" id="sport" tabindex="6" class="form-control">
         <option><?php echo $sport;?></option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
+        <option>و;شوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
     </tr>
        </table></div></div>
        <div class="card-body">

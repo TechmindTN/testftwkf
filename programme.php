@@ -347,7 +347,7 @@ $row = mysql_fetch_assoc($result);
                                     
                                     <select required name="sport" size="1" id="sport" tabindex="6" class="custom-select " required>
         <option> </option>        
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select>
                                     </div>
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label><?=$_TXT[61]?></label>

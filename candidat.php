@@ -180,7 +180,7 @@ body {
       <td align="left">Discipline</td>
       <td align="left"><select name="discipline" size="1" id="discipline" tabindex="12">
         <option> </option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option>
         <option>Kendo</option>
       </select></td>
     </tr>

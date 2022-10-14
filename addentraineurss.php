@@ -172,7 +172,7 @@ else
       <td align="left">Discipline</td>
       <td align="left"><select name="sport" size="1" id="discipline" tabindex="9">
         <option><?php echo $sport;?></option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
       <td align="left">Grade</td>
       <td align="left"><select name="grade" size="1" id="grade" tabindex="12">
         <option> <?php echo $grade;?></option>        

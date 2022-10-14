@@ -16,7 +16,7 @@ define("USER",'root');
 
 define("PASS",'');
 
-define("DB","kungfu_local");
+define("DB","ftwkfor1_basephp");
 
 
 

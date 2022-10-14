@@ -63,7 +63,7 @@ $result01 = mysql_query($query01,$connexion);
                    <td align="right" width="25%"> Sport </td>
    <td align="left" width="25%"><select name="sport" size="1" id="sais" tabindex="9" onChange="document.stat.submit();">
         <option><?php echo $sport1;?> </option>        <option></option>
-        <option>وشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option>ديكايتو ريو</option><option>الدفاع عن النفس بودو</option><option>فوفينام فيات فوداو</option><option>فوت وات فان فوداوو و الأنشطة التابعة</option><option>هابكيدو</option><option>الكيسندو</option></select></td>
 
 
                 </tr>

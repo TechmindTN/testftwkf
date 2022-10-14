@@ -369,8 +369,8 @@ $annee= substr("$date_naiss", 0, 4);
                                     <label><?=$_TXT[10]?> </label>
                                     <select  class="form-control form-control-user" name="sexe" size="1" id="sexe" required>
                                        <option> <?php echo $row['sexe'];?></option>
-                                       <option>???</option>
-                                       <option>????</option>
+                                       <option>ذكر</option>
+                                       <option>انثى</option>
                                      </select>
                                   </div>
                                   <div class="col-sm-4 mb-3 mb-sm-0">
@@ -383,7 +383,7 @@ $annee= substr("$date_naiss", 0, 4);
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label ><?=$_TXT[14]?>  </label><select name="sport" size="1" id="sport" tabindex="6"class="form-control form-control-user" required>
         <option><?php echo $row['sport'];?></option>        <option></option>
-        <option>??????? ??</option><option>????</option><option>??????? ???</option><option>?????? ?? ????? ????</option><option>??????? ???? ?????</option><option>??? ??? ??? ?????? ? ??????? ???????</option><option>???????</option><option>????????</option></select>
+        <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option><option>الكايزن</option><option>المصارعة الصينية</option><option>كمبو</option><option>الدفاع عن النفس بودو</option></select>
                                      
                                     </div>
                                     <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
