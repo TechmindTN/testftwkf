@@ -414,21 +414,16 @@ $totalRows = mysql_num_rows($result);
 //query('SET NAMES UTF8');
 $row = mysql_fetch_assoc($result);
 
-
+$resulty = mysql_query($querys,$connexion);
+$rowy = mysql_fetch_row($resulty);
 ?>
 
 </div>
 <div class="card-body">
                             <div class="table-responsive">
 <table  class="table table-bordered" width="100%" id="dataTable">
-	<thead>
-    <?php
-if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ 
-
-    $resulty = mysql_query($querys,$connexion);
-    $rowy = mysql_fetch_row($resulty);
-?>Total:    
-    <?php echo $rowy[0] ;}  ?>
+    
+	<thead><?php echo $rowy[0] ?>
 	<tr>
     <td ><div align="center"><strong></strong> </div> </td>
 

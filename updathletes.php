@@ -70,7 +70,7 @@ $code=$_GET['code'];
 $query1 ="SELECT saison FROM saison where actif = 1";
 $result1 = mysql_query($query1,$connexion);
 $row1 = mysql_fetch_row($result1);
-$saison = $row1[0];
+$saison = $_GET['saison'];
 
 $query ="select * FROM `athletes` where `n_lic` = '$code' and saison = '$saison'";
 $result = mysql_query($query,$connexion);
