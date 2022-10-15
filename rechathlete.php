@@ -320,7 +320,7 @@ if (isset($_POST['id'])) {
 
 
  if (($id <> '')){
-$query1 = "SELECT * FROM athletes WHERE n_lic = '$id' AND club = '$club' order by saison desc";
+$query1 = "SELECT * FROM athletes WHERE n_lic = '$id'  order by saison desc";
 $result1 = mysql_query($query1,$connexion);
 $totalRows = mysql_num_rows($result1);
 $row1 = mysql_fetch_assoc($result1);
