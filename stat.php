@@ -118,7 +118,7 @@ if (isset($_POST['club'])) {
 <ul class="navbar-nav ml-auto">
 <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <form method="post">
       <input type="submit" name="lang" value="fr" class="btn"/>
       <input type="submit" name="lang" value="ar" class="btn"/>

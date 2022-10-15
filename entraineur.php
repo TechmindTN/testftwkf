@@ -451,6 +451,7 @@ document.forms[0].submit();
 	</div>  
 	<div class="col-sm-4 mb-1 mb-sm-0">
   <label><?=$_TXT[34]?></label>
+  <?php if ($type=="")
      <input required name="diplome" type="file" id="diplome" size="1" tabindex="15"class="custom-file">
     </div>			
 	  
