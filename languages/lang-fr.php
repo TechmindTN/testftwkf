@@ -56,7 +56,7 @@ $_TXT = [
 
   "fiche médical",
 
-  "Eng paternal",
+  "Assurance",
 
   "Athlètes Non Valide",
 

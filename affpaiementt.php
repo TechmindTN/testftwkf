@@ -305,8 +305,17 @@ window.location.href="login.php";
 $saison = "";
 if (isset($_POST['saison'])) {$saison = (get_magic_quotes_gpc()) ? $_POST['saison'] : addslashes($_POST['saison']);}
 $row=null;
-{
-$query ="SELECT * FROM paiement where etat = 0";}
+
+if (($club <> "ADMIN")AND($club <> "Admin")AND($club <> "admin")){
+    $query ="SELECT * FROM paiement where etat = 0 and club='$club'";
+
+}
+else{
+    $query ="SELECT * FROM paiement where etat = 0";
+
+
+}
+// $query ="SELECT * FROM paiement where etat = 0";
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 $i=0;

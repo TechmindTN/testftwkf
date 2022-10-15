@@ -364,9 +364,7 @@ $rowy = mysql_fetch_row($resulty);
    <a href ='liste.php' class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i><?=$_TXT[18]?></a>
  
-<a href="rechathlete.php?club<?php echo "=$club";?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
 
-<?=$_TXT[19]?></a>
 
    
    <?php
@@ -381,7 +379,9 @@ $row1 = mysql_fetch_assoc($result1);
 
 	  ?>
    
-   
+   <a href="rechathlete.php?club<?php echo "=$club";?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+
+<?=$_TXT[19]?></a>
  <form name="stat" method="post" action="">
 
 
