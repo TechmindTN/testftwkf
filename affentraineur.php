@@ -449,12 +449,18 @@ $query00 ="SELECT * FROM entraineur where saison = '$saison' and n_lic = '$lic' 
 $result00 = mysql_query($query00,$connexion);
 $totalRows = mysql_num_rows($result00);
 
-if ($type == "????"){ $uploaddir ='entr/' ; }
-if ($type == "????"){ $uploaddir ='dir/' ; }
-if ($type == "???"){ $uploaddir ='arb/' ; }
-if ($type == "????"){ $uploaddir ='anim/' ; }
-if ($type == "?????"){ $uploaddir ='acc/' ; }
-if ($type == "???? ??????"){ $uploaddir ='entrf/' ; }
+if ($type == "ممرن"){ $uploaddir ='./photoentrt/' ; }
+else if ($type == "مسير"){ $uploaddir ='./photodirt/' ; }
+else if ($type == "منشط"){ $uploaddir ='./photoanimt/' ; }
+else if ($type == "مرافق"){ $uploaddir ='./photoacct/' ; }
+else if ($type == "مدرب فدرالي"){ $uploaddir ='./photoentrft/' ; }
+
+if ($type == "ممرن"){ $uploaddirdiplome ='diplomeentrt/' ; }
+else if ($type == "مسير"){ $uploaddirdiplome ='diplomedirt/' ; }
+else if ($type == "منشط"){ $uploaddirdiplome ='diplomeanimt/' ; }
+else if ($type == "مرافق"){ $uploaddirdiplome ='diplomeacct/' ; }
+else if ($type == "مدرب فدرالي"){ $uploaddirdiplome ='diplomeentrft/' ; }
+// if ($type == "???? ??????"){ $uploaddir ='entrf/' ; }
 
 
 if ($etat == "1") {
@@ -479,8 +485,8 @@ $nbr++;
 	  <td><div align="center"><?php echo $row['degre'];?></div></td>
 	  <td><div align="center"><?php echo $row['type'];?></div></td>
 	  <td><div align="center"><?php echo $row['sport'];?></div></td>
-	  <td><div align="center"><img src="./<?php echo $uploaddir.$row['photo'];?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-	  <td><div align="center"><img src="./<?php echo $uploaddir.$row['photo'];?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+	  <td><div align="center"><img src="./<?php echo $uploaddir.$lic.'.jpg';?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+	  <td><div align="center"><img src="./<?php echo $uploaddirdiplome.$lic.'.jpg';?>?<?php echo time(); ?>" width="33" height="50"></div></td>
       
             <td> 
  <?php         if ($totalRows==0) { ?>

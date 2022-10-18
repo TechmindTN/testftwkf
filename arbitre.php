@@ -413,18 +413,22 @@ Discipline
         <div class="col-sm-4 mb-3 mb-sm-0">
 
       Grade Arbitrage
-      <select required class="form-control form-control-user" name="gradear" size="1" id="degre2" tabindex="9">
-        <option></option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-        <option>جهوي</option>
+      <select required class="form-control form-control-user" name="gradear" size="1" id="degre2" tabindex="9" onchange="myFunction()">
+      <option></option>
+      <option>جهوي</option>
+       <option>وطني 1</option>
+       <option>وطني 2</option>
+       <option>وطني A 3</option>
+       <option>وطني B 3</option>
         <option>مغاربي</option>
-        <option>قاري</option>
+        <option>عربي</option>
         <option>إفريقي</option>
         <option>دولي</option>
       </select>
+    
+ 
       </div>
+      
       
       <div class="col-sm-4 mb-3 mb-sm-0">
 

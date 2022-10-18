@@ -343,11 +343,12 @@ do {
 	  <td><div align="center"><?php echo $row['montant'];?></div></td>
 	  <td><div align="center"><?php echo $row['date'];?></div></td>
       
-<td><img src="./decharge<?php echo $row['id']. '.jpg';?>?<?php echo time(); ?>" width="33" height="50"  ></td>
+<td><img src="./decharge/<?php echo $row['id']. '.jpg';?>?<?php echo time(); ?>" width="33" height="50"  ></td>
       <td align="center">
+     <?php if (($club == "ADMIN")AND($club == "Admin")AND($club == "admin")){ ?>
       <a href ='valpai.php?code<?php echo "=$row[id]";?>'><?=$_TXT[57]?></a><br>
       <a href ='delpai.php?code<?php echo "=$row[id]";?>' onclick="return confirm('Vous etes sure de supprimer cet paiement??')"><?=$_TXT[22]?></a>
-        
+      <?php } ?>  
         </td>
 
   </tr></tbody>

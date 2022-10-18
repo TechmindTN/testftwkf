@@ -384,7 +384,8 @@ if ($type == "مدرب فدرالي"){ $uploaddird ='./photoentrf/' ; }}
                                       <select name="sport" size="1" id="sport" tabindex="6" class="custom-select">
         <option><?php echo $row['sport'];?></option>        <option></option>
         <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option><option>الكايزن</option><option>المصارعة الصينية</option><option>كمبو</option><option>الدفاع عن النفس بودو</option></select>
-                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+</div>                            
+        <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label>Degre : </label>
                                     <select name="degre" size="1" id="degre" tabindex="9" class="custom-select">
         <option><?php echo $row['degre'];?> </option>
@@ -425,13 +426,15 @@ if ($type == "مدرب فدرالي"){ $uploaddird ='./photoentrf/' ; }}
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label>Date Naissance :</label>
                                       <input name="naiss" type="date" id="naiss" tabindex="1" size="15" value="<?php echo $row['naiss'];?>" class="form-control form-control-user">                    </div>
-                                  
-                                </div>  
-                                <div class="form-group row">
+
+                             
 <div class="col-sm-4 mb-3 mb-sm-0">
                                       <label >CIN  :   </label>
                                       <input name="cin" type="number" id="cin" tabindex="1" size="25" value ="<?php echo $row['cin'];?>"  class="form-control form-control-user">                                </div>
-                                    <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
+</div>
+                                      <div class="form-group row">
+
+                                      <div class="col-sm-4 col-sm-4 mb-3 mb-sm-0">
                                     <label>Photo : </label>
                                     <input name="photo" type="file" id="photo" size="1" tabindex="15" class="form-control-file">
                                   </div>

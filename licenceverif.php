@@ -368,21 +368,21 @@ $query ="SELECT * FROM athletes where date_naiss = '$date_naiss' order by saison
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
 do {
-
+    $old=
 similar_text(strtolower($nom), strtolower($row['nom']), $percentn); 
 similar_text(strtolower($prenom), strtolower($row['prenom']), $percentpn); 
 similar_text(strtolower($nom), strtolower($row['prenom']), $percentn1); 
 similar_text(strtolower($prenom), strtolower($row['nom']), $percentpn1); 
 
 
-if ((($percentn >50) or ($percentpn >50)or($percentn1 >50) or ($percentpn1 >50))and ($saison == $row['saison'])) {
+if ((($percentn >50) or ($percentpn >50)or($percentn1 >50) or ($percentpn1 >50))) {
 
 
 ?>
-	<tr bgcolor="#FF0000">
+	<tr bgcolor="#FF0000" style="color:#fff">
     
 <?php }else {?>
-	<tr  >
+	<tr   >
 <?php }?>
 
 

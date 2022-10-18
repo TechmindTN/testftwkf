@@ -451,8 +451,20 @@ $annee= substr("$date_naiss", 0, 4);
       <input name="aphotobor" type="hidden" id="aphoto" size="1" value ="<?php echo $code. ".jpg";?>">
       <input name="aphotoeng" type="hidden" id="aphoto" size="1" value ="<?php echo $code. ".jpg";?>">
 
-      <input type="submit" name="valider" id="valider" value=<?=$_TXT[57]?>  class="btn btn-primary">
+      
   </p>
+  <div class="form-group row">
+  <div class="col-sm-6 mb-3 mb-sm-0 text-center">
+  
+  <input type="submit" name="valider" id="valider" value=<?=$_TXT[57]?>  class="btn btn-primary">
+
+  </div>
+  <div class="col-sm-6 mb-3 mb-sm-0 text-center">
+  
+  <a class="btn btn-primary" href="affathlete.php">Annuler</a>
+
+  </div>
+  </div>
 </form></div></div></div></div></div></div></div></div>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>

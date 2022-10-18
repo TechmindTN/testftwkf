@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (!isset($_SESSION["lang"])) { $_SESSION["lang"] = "fr"; }
@@ -156,7 +157,17 @@ document.forms[0].submit();
         </div>
     </div>
 </form>
+<?php $query1 ="SELECT club FROM club";
+$result1 = mysql_query($query1,$connexion);
+$row1 = mysql_fetch_assoc($result1);
+$queryl ="SELECT ligue from clubb group by ligue order by ligue";	 
+$resultl = mysql_query($queryl,$connexion);
+$rowl = mysql_fetch_assoc($resultl);
+$ligue = "";
 
+if (isset($_POST['ligue'])) {$ligue = (get_magic_quotes_gpc()) ? $_POST['ligue'] : addslashes($_POST['ligue']);}
+
+?>
 <!-- Topbar Navbar -->
 <ul class="navbar-nav ml-auto">
 <li class="nav-item dropdown no-arrow mx-1">
@@ -391,7 +402,20 @@ document.forms[0].submit();
         <option></option>        <option></option>
         <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option><option>الكايزن</option><option>المصارعة الصينية</option><option>كمبو</option><option>الدفاع عن النفس بودو</option></select>
     </div> 
-	<div class="col-sm-4 mb-3 mb-sm-2">
+	<div class="col-sm-4 mb-3 mb-sm-2" >
+   
+<label><?=$_TXT[60]?></label>
+
+<select id="types" name="type" size="1" id="type" tabindex="14" class="custom-select" onchange="myFunction()">
+        <option > </option>
+        <option >مسير</option>
+        <option >ممرن</option>
+        <option >مدرب فدرالي</option>
+        <option >مرافق</option> 
+         <option>محب</option>
+      </select>
+	</div>  
+	<div class="col-sm-4 mb-1 mb-sm-0" id="1">
     <label><?=$_TXT[31]?></label>	      
     <select name="grade" size="1" id="grade" tabindex="12" class="custom-select">
                 <option>-</option>
@@ -403,9 +427,15 @@ document.forms[0].submit();
        <option>أسود درجة سادسة</option>
        <option>أسود درجة سابعة</option>
 </select>
-	</div>  
-	<div class="col-sm-4 mb-1 mb-sm-0">
-  <label><?=$_TXT[32]?></label>
+     
+    </div>			
+	  
+</div>
+<div class="form-group row">
+
+	
+	<div class="col-sm-4 mb-3 mb-sm-2" id="2">
+    <label><?=$_TXT[32]?></label>
    <select name="degre" size="1" id="degre" tabindex="9" class="custom-select">
         <option>-</option>
         <option>مدرب فدرالي</option>
@@ -413,30 +443,38 @@ document.forms[0].submit();
         <option>درجة ثانية</option>
         <option>درجة ثالثه</option>
       </select>
-    </div>			
-	  
-</div>
-<div class="form-group row">
-
-	
-	<div class="col-sm-4 mb-3 mb-sm-2">
-    <label><?=$_TXT[60]?></label>
-<select name="type" size="1" id="type" tabindex="14" class="custom-select">
-        <option> </option>
-        <option>مسير</option>
-        <option>ممرن</option>
-        <option>مدرب فدرالي</option>
-        <option>مرافق</option> 
-         <option>محب</option>
-      </select>
 	</div>  
+    
 	<div class="col-sm-4 mb-1 mb-sm-0">
   <label><?=$_TXT[9]?> </label>
       <input required name="naiss" type="date" id="naiss" tabindex="1" size="15" class="form-control">
+</div>		
+<div class="col-sm-4 mb-1 mb-sm-0">
+  <label><?=$_TXT[12]?> </label>
+  <select name="club" size="1" id="club" tabindex="6" class="form-control form-control-user" required>
+                                      <option></option>
+                                      <?php
+					   do { 
+                                     $res=$row1['club'];
+                                      echo "<option >$res</option>";
+                       } while ($row1 = mysql_fetch_assoc($result1));
+                    
+?></select>
 </div>	
-	  
-</div>
-<div class="form-group row">
+
+<div class="col-sm-4 mb-1 mb-sm-0">
+  <label>Ligue</label>
+  <select name="ligue" size="1" id="ligue" tabindex="9"  class="custom-select "  >
+        <option><?php echo $ligue;?> </option>
+        <option> </option>
+                      <?php
+					   do { 
+                                     $res=$rowl['ligue'];
+                                      echo "<option >$res</option>";
+                       } while ($rowl = mysql_fetch_assoc($resultl));
+?>
+      </select></div>	
+
 
 	<div class="col-sm-4 mb-3 mb-sm-0">
 	<label><?=$_TXT[5]?></label>
@@ -444,14 +482,58 @@ document.forms[0].submit();
   <input required name="cin" type="number" id="nom2" tabindex="1" size="25" class="form-control">
     
     </div> 
-	<div class="col-sm-4 mb-3 mb-sm-2">
+	<div class="col-sm-4 mb-3 mb-sm-2" >
     <label><?=$_TXT[15]?></label>
    <input required name="photo" type="file" id="photo" size="1" tabindex="15"class="custom-file">
 
 	</div>  
-	<div class="col-sm-4 mb-1 mb-sm-0">
+	<div class="col-sm-4 mb-1 mb-sm-0" id="dd">
+
+    <script>
+function myFunction() {
+  var x = document.getElementById("types");
+  var diplome = document.getElementById("diplome");
+
+  var i = x.selectedIndex;
+  console.log(i)
+
+  if(i==1){
+
+    document.getElementById('dd').style.display="none";
+    document.getElementById('1').style.display="none";
+    document.getElementById('2').style.display="none";
+    diplome.removeAttribute('required');
+   
+
+  } else if (i==2){
+    document.getElementById('dd').style.display="block";
+    document.getElementById('1').style.display="block";
+    document.getElementById('2').style.display="block";
+    diplome.setAttribute('required');
+
+    
+  }else if (i==3){
+    document.getElementById('dd').style.display="block";
+    document.getElementById('1').style.display="block";
+    document.getElementById('2').style.display="block";
+    diplome.setAttribute('required');
+
+  }else if (i==4){
+    document.getElementById('dd').style.display="none";
+    document.getElementById('1').style.display="none";
+    document.getElementById('2').style.display="none";
+    diplome.removeAttribute('required');
+
+  }else if (i==5){
+    document.getElementById('dd').style.display="none";
+    document.getElementById('1').style.display="none";
+    document.getElementById('2').style.display="none";
+    diplome.removeAttribute('required');
+
+  }
+}
+</script>
   <label><?=$_TXT[34]?></label>
-  <?php if ($type=="")
      <input required name="diplome" type="file" id="diplome" size="1" tabindex="15"class="custom-file">
     </div>			
 	  
@@ -465,7 +547,11 @@ document.forms[0].submit();
   </p>
 </form>
 </div></div></div></div></div></div></div>  
-<!-- Bootstrap core JavaScript-->
+
+
+
+
+
 <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

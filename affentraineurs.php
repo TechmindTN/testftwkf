@@ -372,11 +372,11 @@ $row1 = mysql_fetch_assoc($result1);
 	    <td ><div align="center"><strong><?=$_TXT[12]?></strong></div></td>
 		<td> <div align = "center"> <strong> <?=$_TXT[13]?> </strong> </div> </td>
 		<td ><div align="center"><strong><?=$_TXT[32]?></strong></div></td>
+		<td ><div align="center"><strong><?=$_TXT[31]?></strong></div></td>
 		<td ><div align="center"><strong><?=$_TXT[33]?></strong></div></td>
-		<td ><div align="center"><strong><?=$_TXT[34]?></strong></div></td>
 		<td> <div align = "center"> <strong> <?=$_TXT[14]?></strong> </div> </td>
 		<td ><div align="center"><strong><?=$_TXT[15]?></strong></div></td>
-		<td ><div align="center"><strong><?=$_TXT[35]?></strong></div></td>
+		<td ><div align="center"><strong><?=$_TXT[34]?></strong></div></td>
 		<td align="center"><strong><?=$_TXT[23]?></strong></td>
 		
 	</tr>
@@ -416,21 +416,20 @@ $result00 = mysql_query($query00,$connexion);
 $totalRows = mysql_num_rows($result00);
 $obs = $row['obs'];
 if ($obs == 0){
-if ($type == "????"){ $uploaddir ='entrt/' ; }
-if ($type == "????"){ $uploaddir ='dirt/' ; }
-if ($type == "???"){ $uploaddir ='arbt/' ; }
-if ($type == "????"){ $uploaddir ='animt/' ; }
-if ($type == "?????"){ $uploaddir ='acct/' ; }
-if ($type == "???? ??????"){ $uploaddir ='entrft/' ; }
+    if ($type == "ممرن"){ $uploaddir ='./photoentrt/' ; }
+    else if ($type == "مسير"){ $uploaddir ='./photodirt/' ; }
+    else if ($type == "منشط"){ $uploaddir ='./photoanimt/' ; }
+    else if ($type == "مرافق"){ $uploaddir ='./photoacct/' ; }
+    else if ($type == "مدرب فدرالي"){ $uploaddir ='./photoentrft/' ; }
 }
 else{
-if ($type == "????"){ $uploaddir ='entr/' ; }
-if ($type == "????"){ $uploaddir ='dir/' ; }
-if ($type == "???"){ $uploaddir ='arb/' ; }
-if ($type == "????"){ $uploaddir ='anim/' ; }
-if ($type == "?????"){ $uploaddir ='acc/' ; }
-if ($type == "???? ??????"){ $uploaddir ='entrf/' ; }
+  
 }
+if ($type == "ممرن"){ $uploaddirdiplome ='diplomeentrt/' ; }
+else if ($type == "مسير"){ $uploaddirdiplome ='diplomedirt/' ; }
+else if ($type == "منشط"){ $uploaddirdiplome ='diplomeanimt/' ; }
+else if ($type == "مرافق"){ $uploaddirdiplome ='diplomeacct/' ; }
+else if ($type == "مدرب فدرالي"){ $uploaddirdiplome ='diplomeentrft/' ; }
 
 if ($etat == "1") {
 ?>
@@ -453,8 +452,8 @@ $nbr++;
     <td><div align="center"><?php echo $row['degre'];?></div></td>
     <td><div align="center"><?php echo $row['type'];?></div></td>
     <td><div align="center"><?php echo $row['sport'];?></div></td>
-    <td><div align="center"><img src="./photo<?php echo $uploaddir.$row['photo'];?>?<?php echo time(); ?>" width="33" height="50"></div></td>
-    <td><div align="center"><img src="./diplome<?php echo $uploaddir.$row['photo'];?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+    <td><div align="center"><img src="<?php echo $uploaddir.$lic.'.jpg';?>?<?php echo time(); ?>" width="33" height="50"></div></td>
+    <td><div align="center"><img src="<?php echo $uploaddirdiplome.$lic.'.jpg';?>?<?php echo time(); ?>" width="33" height="50"></div></td>
       
     <td><?PHP 
   //    if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>

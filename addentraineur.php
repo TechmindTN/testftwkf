@@ -26,8 +26,8 @@ window.location.href="login.php";
 $query ="SELECT club,ligue FROM club where club = '$club'";
 $result = mysql_query($query,$connexion);
 $row = mysql_fetch_assoc($result);
-$ligue=$row['ligue'];
-$club = $row['club'];
+// $ligue=$row['ligue'];
+// $club = $row['club'];
 $type = $_POST['type'];
 
 $code1 = 0;
@@ -58,11 +58,11 @@ $cin = $_POST['cin'];
 $naiss = $_POST['naiss'];
 
 $degre = $_POST['degre'];
-$gar = $_POST['gradear'];
+// $gar = $_POST['gradear'];
 $grade = $_POST['grade'];
 
-$clubb = $_POST['clubb'];
-$liguee = $_POST['liguee'];
+$clubb = $_POST['club'];
+$liguee = $_POST['ligue'];
 
 
 
@@ -77,11 +77,10 @@ if (($extension == '.jpg')or($extension == ".JPG")) {
 $photo = $code.".jpg";
 
 if ($type == "ممرن"){ $uploaddir ='./photoentrt/' ; }
-if ($type == "مسير"){ $uploaddir ='./photodirt/' ; }
-if ($type == "حكم"){ $uploaddir ='./photoarbt/' ; }
-if ($type == "منشط"){ $uploaddir ='./photoanimt/' ; }
-if ($type == "مرافق"){ $uploaddir ='./photoacct/' ; }
-if ($type == "مدرب فدرالي"){ $uploaddir ='./photoentrft/' ; }
+else if ($type == "مسير"){ $uploaddir ='./photodirt/' ; }
+else if ($type == "منشط"){ $uploaddir ='./photoanimt/' ; }
+else if ($type == "مرافق"){ $uploaddir ='./photoacct/' ; }
+else if ($type == "مدرب فدرالي"){ $uploaddir ='./photoentrft/' ; }
 
 
 
@@ -114,25 +113,29 @@ else {
 if (isset($_POST['adiplome'])) {
 $diplome = $adiplome;}
 }
-
+if (($club <> "ADMIN")AND($club <> "Admin")AND($club <> "admin")){
+  $chosenClub=$club;
+  }else{
+    $chosenClub=$clubb;
+  }
 if (($type == "مرافق") or ($type == "مسير"))
 { $etat = 1 ;}else {$etat = 0;}
 if (($nom <> '')and($prenom <> '')and($sport <> '')and($sexe <> '')and($photo <> '')and(($diplome <> '')or ($type == "مسير") or ($type == "مرافق")))
 {
 	if ($code1 == 0) {
-
-$query ="INSERT INTO `entraineurs` ( `saison` ,`n_lic`,`degre` , `sport`, `nom`, `prenom` , `sexe`  , `club` , `ligue`, `grade` ,  `photo`, `date_saisie`, `type`, `naiss`, `arbitrage`, `cin`, `etat`) 
-VALUES ('$saison','$code','$degre','$sport','$nom','$prenom', '$sexe', '$club', '$ligue', '$grade', '$photo', '$dat1' , '$type', '$naiss', '$gar', '$cin', '$etat')";
+    
+$query ="INSERT INTO `entraineurs` ( `saison` ,`n_lic`,`degre` , `sport`, `nom`, `prenom` , `sexe`  , `club` , `ligue`, `grade` ,  `photo`, `date_saisie`, `type`, `naiss`,  `cin`, `etat`) 
+VALUES ('$saison','$code','$degre','$sport','$nom','$prenom', '$sexe', '$chosenClub', '$liguee', '$grade', '$photo', '$dat1' , '$type', '$naiss',  '$cin', '$etat')";
 }
 else {
-$query ="UPDATE `entraineurs` SET `nom`='$nom', `prenom`='$prenom', `degre`='$degre', `sport`='$sport' , `sexe` ='$sexe',  `club`= '$clubb', `ligue`='$liguee', `grade`='$grade' ,  `photo`='$photo',  `type`='$type',  `naiss`='$naiss',  `arbitrage`='$gar' ,  `cin`='$cin' WHERE (`n_lic`='$code1' and `saison`='$saison' and type = '$type')";
+$query ="UPDATE `entraineurs` SET `nom`='$nom', `prenom`='$prenom', `degre`='$degre', `sport`='$sport' , `sexe` ='$sexe',  `club`= '$clubb', `ligue`='$ligue', `grade`='$grade' ,  `photo`='$photo',  `type`='$type',  `naiss`='$naiss',   `cin`='$cin' WHERE (`n_lic`='$code1' and `saison`='$saison' and type = '$type')";
 }
 
 $result = mysql_query($query,$connexion);
 ?>
  
 <script type="text/javascript">
-window.location.href="affentraineur.php";
+window.location.href="affentraineurs.php";
 </script>
 
 <?php 

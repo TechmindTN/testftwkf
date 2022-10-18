@@ -453,8 +453,12 @@ $annee= substr("$date_naiss", 0, 4);
       <input name="aphotobor" type="hidden" id="aphoto" size="1" value ="<?php echo $code. ".jpg";?>">
       <input name="aphotoeng" type="hidden" id="aphoto" size="1" value ="<?php echo $code. ".jpg";?>">
 
-      <a href ='licenceverif.php?naiss<?php echo "=$date_naissance";?>&club<?php echo "=$club1";?>&club1<?php echo "=$club";?>&nom<?php echo "=$nom";?>&prenom<?php echo "=$prenom";?>&code<?php echo "=$code";?>'>    <input type="submit" name="valider" id="valider" value="Valider"  class="btn btn-primary"></a>
-  </p>
+      <a href ='licenceverif.php?naiss<?php echo "=$date_naissance";?>&club<?php echo "=$club1";?>&club1<?php echo "=$club";?>&nom<?php echo "=$nom";?>&prenom<?php echo "=$prenom";?>&code<?php echo "=$code";?>'>   
+      <input type="submit" name="valider" id="valider" value="Valider"  class="btn btn-primary"></a>
+      <a class="btn btn-primary" href="licenceverif.php">Annuler</a>
+
+ 
+    </p>
   
 </form>
 </div></div></div></div></div></div></div></div>

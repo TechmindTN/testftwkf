@@ -390,7 +390,12 @@ $row2 = mysql_fetch_assoc($result2);
                        } while ($row2 = mysql_fetch_assoc($result2));
 ?>
      </select>
-                                    </div><div class="col-sm-4 mb-3 mb-sm-0">
+                                    </div>
+                                    
+                                    
+                                    <!-- <?php if (($club == "ADMIN")or($club == "Admin")or($club == "admin")){ ?> -->
+                                    
+                                    <div class="col-sm-4 mb-3 mb-sm-0">
                                         <label><?=$_TXT[12]?></label>
                                         <select name="club" size="1" id="club" tabindex="12"  class="custom-select" required>
         <option></option>
@@ -402,6 +407,8 @@ $row2 = mysql_fetch_assoc($result2);
 ?>
      </select>
                                     </div>
+
+                                    <!-- <?php } ?> -->
                                     <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label><?=$_TXT[39]?></label>
                                     <input name="montant" type="number" id="montant" tabindex="10" size="25" class="form-control "  placeholder="Saisir Montant" required>

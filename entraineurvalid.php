@@ -88,6 +88,13 @@ if ($type == "منشط"){ $uploaddir ='./photoanim' ; }
 if ($type == "مرافق"){ $uploaddir ='./photoacc' ; }
 if ($type == "مدرب فدرالي"){ $uploaddir ='./photoentrf' ; }
 
+if ($type == "ممرن"){ $uploaddirdiplome ='./diplomeentrt/' ; }
+else if ($type == "مسير"){ $uploaddirdiplome ='./diplomedirt/' ; }
+// if ($type == "حكم"){ $uploaddirdiplome ='./photoarb' ; }
+else if ($type == "منشط"){ $uploaddirdiplome ='./diplomeanimt/' ; }
+else if ($type == "مرافق"){ $uploaddirdiplome ='./diplomeacct/' ; }
+else if ($type == "مدرب فدرالي"){ $uploaddirdiplome ='./diplomeentrft/' ; }
+
 rename($uploaddir."t/".$anc, $uploaddir."/".$nouv);}
 
 } else { 
@@ -116,7 +123,9 @@ $dat1 = date("Y/m/d H:i:s") ;
 $date_saisie = $dat1;
 
 
-
+$old_name =  $uploaddirdiplome.$lic.'.jpg'; 
+        $new_name =  $uploaddirdiplome.$code1.'.jpg'; 
+        // rename( $old_name, $new_name) ;
 $query ="INSERT INTO `entraineur` ( `saison` ,`n_lic`,`degre` , `sport`, `nom`, `prenom` , `sexe`  , `club` , `ligue`, `grade` ,  `photo`, `date_saisie`, `type`, `naiss`, `arbitrage`, `cin`, `etat`) 
 VALUES ('$saison','$code1','$degre','$sport','$nom','$prenom', '$sexe', '$club1', '$ligue', '$grade', '$nouv', '$dat1' , '$type', '$naiss', '$gar', '$cin', '1')";
 
@@ -125,6 +134,15 @@ $result = mysql_query($query,$connexion);
 $query1 ="delete FROM entraineurs where n_lic = $code";
 $result1 = mysql_query($query1,$connexion);
 
+
+if(rename( $old_name, $new_name))
+           { 
+           echo "Successfully Renamed $old_name to $new_name" ;
+           }
+          else
+          {
+           echo "A File With The Same Name Already Exists" ;
+          }
 
 
 ?>

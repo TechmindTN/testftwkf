@@ -386,19 +386,20 @@ if ($type == "مرافق"){ $uploaddird ='./diplomeacc/' ; }
         <option><?php echo $row['sport'];?></option>        <option></option>
         <option>ووشوكونغ فو</option><option>كمبو</option><option> دكايتاريو</option> <option> فو فينام فيات فوداو </option><option>هابكيدو</option><option>الكيسندو</option><option>الكايزن</option><option>المصارعة الصينية</option><option>كمبو</option><option>الدفاع عن النفس بودو</option></select>
                                     </div> 
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
-                                        <label>      Grade Arbitrage
+                                    <div class="col-sm-4  mb-sm-0">
+                                        <label>      Grade Arbitrage <br>
 </label>
 
 <select name="gradear" size="1" id="degre2" tabindex="9" class="form-control">
         <option><?php echo $row['arbitrage'];?></option>
-        <option>-</option>
-        <option>درجة اولى</option>
-        <option>درجة ثانية</option>
-        <option>درجة ثالثه</option>
-         <option>جهوي</option>
-       <option>مغاربي</option>
-        <option>قاري</option>
+        <option></option>
+      <option>جهوي</option>
+       <option>وطني 1</option>
+       <option>وطني 2</option>
+       <option>وطني A 3</option>
+       <option>وطني B 3</option>
+        <option>مغاربي</option>
+        <option>عربي</option>
         <option>إفريقي</option>
         <option>دولي</option>
       </select>                                      

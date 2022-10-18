@@ -419,7 +419,10 @@ do {
           
      
           <div align="center"><a  onclick="return confirm('Vous etes sure de supprimer ce Athlete??')" href ='delathletedel.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>'><b><?=$_TXT[22]?></b></a></div>
-      <?PHP  } ?>       
+          <a href ='updathletesdel.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b><?=$_TXT[21]?></b></a>
+          <a href ='addathletesdel.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b>Valider</b></a>
+
+          <?PHP  } ?>       
         
         </td>
 

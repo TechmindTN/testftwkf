@@ -57,7 +57,7 @@ if ((($extension == '.jpg')or($extension == ".JPG"))) {
 $extension = '.jpg';
 $decharge = $code.'.jpg';
 $uploaddir ='./decharge/';
-move_uploaded_file($_FILES['photo']['tmp_name'], $uploaddir.$photo);
+move_uploaded_file($_FILES['decharge']['tmp_name'], $uploaddir.$decharge);
 }
 else {
 if (isset($_POST['aphoto'])) {
@@ -67,16 +67,16 @@ $size1=1;
 }}
 
 
-if (($club <> '')and($date <> '')and($montant <> '')and($saison <> '')and($extension == '.jpg'))
-{
+// if (($club <> '')and($date <> '')and($montant <> '')and($saison <> '')and($extension == '.jpg'))
+// {
 $query ="INSERT INTO `paiement` (`club` ,`saison`,`montant` , `date`, `etat`) VALUES ('$club','$saison','$montant','$date',0 )";
 $result = mysql_query($query,$connexion);
 ?>
 
-<?php 
-}
+<!-- <?php 
+//}
 
-?>
+?> -->
 <script type="text/javascript">
 window.location.href="affpaiement.php";
 </script>

@@ -84,7 +84,7 @@ $club = $_SESSION['club'];
                         <span aria-hidden="true">�</span>
                     </button>
                 </div>
-                <div class="modal-body">S�lectionnez "D�connexion" ci-dessous si vous �tes pr�t � terminer votre session en cours.</div>
+                <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous étes prét � terminer votre session en cours.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
                     <a class="btn btn-primary" href="login.php">D�connexion</a>
@@ -382,7 +382,8 @@ $club=$row['club'];
 $query ="SELECT * FROM athletess where club = '$club' and saison = '$saison' order by n_lic";
 
 if (($club == "ADMIN")or($club == "admin")or($club == "Admin") or($club=="dtn")or($club=="DTN")or($club=="Dtn")){
-
+    $resulty = mysql_query($querys,$connexion);
+    $rowy = mysql_fetch_row($resulty);
     if ($club1 <> "") {
         // $querys ="SELECT count(*) FROM athletess where club='$club1'";
     $query ="SELECT * FROM athletess where club = '$club1' and saison = '$saison' and age like '%$age1' order by n_lic";}
@@ -414,16 +415,16 @@ $totalRows = mysql_num_rows($result);
 //query('SET NAMES UTF8');
 $row = mysql_fetch_assoc($result);
 
-$resulty = mysql_query($querys,$connexion);
-$rowy = mysql_fetch_row($resulty);
+
 ?>
 
 </div>
 <div class="card-body">
                             <div class="table-responsive">
 <table  class="table table-bordered" width="100%" id="dataTable">
-    
-	<thead><?php echo $rowy[0] ?>
+<?php if (($club == "ADMIN")or($club == "admin")or($club == "Admin") or($club=="dtn")or($club=="DTN")or($club=="Dtn")){
+echo $rowy[0]; }?>
+	<thead> 
 	<tr>
     <td ><div align="center"><strong></strong> </div> </td>
 
@@ -495,7 +496,7 @@ $nbr++;
 if ($ren <> "") {
  $phott = $row['photo'];
  ?>
-	  <td><img src="./photo/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
+	  <td><img src="./photot/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
 	  <td><img src="./photoid/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
 	  <td><img src="./photobor/<?php echo $saison;?>/<?php echo $phott;?>?<?php echo time(); ?>" width="33" height="50"></td>
       <?PHP 

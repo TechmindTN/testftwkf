@@ -471,12 +471,21 @@ document.forms[0].submit();
                                   </div>
                     </div>
                                   <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                <label><?=$_TXT[26]?> </label>
+                                     
+                                <input required name="photoeng" type="file" id="photoeng" size="1" tabindex="15" class="form-control-file" required>
+                                  </div>
                                   <div class="col-sm-4 mb-3 mb-sm-0 text-center">
                                   <input required name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
   <p align="center"><br>
       <input required type="submit" name="valider" id="valider" value=<?=$_TXT[57]?> class="btn btn-primary">
   </p>
+                                  </div> <div class="col-sm-4 mb-3 mb-sm-0">
+                                  <div class="col-sm-4 mb-3 mb-sm-0 text-center">
+                                  <input required name="club" type="hidden" id="cin" tabindex="10" size="25" value ="<?php echo $club ; ?> ">
+<br>
+  <a class="btn btn-primary" href="affathlete.php">Annuler</a>
                                   </div>
                                   </div>
                     </div>
