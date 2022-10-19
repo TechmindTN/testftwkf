@@ -51,7 +51,7 @@ $code = $row[0]+1;
 
 $saison = $_POST['saison'];
 $lic = $_POST['lic'];
-$query1 = "SELECT * FROM athletes WHERE n_lic = '$lic' AND saison = '$saison'";
+$query1 = "SELECT * FROM athletes WHERE n_lic = '$lic' AND saison = '$saison' AND club='$club'";
 $result1 = mysql_query($query1,$connexion);
 $totalRows = mysql_num_rows($result1);
 
@@ -169,7 +169,7 @@ if (($club <> '')and($nom <> '')and($prenom <> '')and($jour <> '')and($mois <> '
 {
 
 
-$query5 ="SELECT * FROM athletes where date_naiss = '$date_naissance' and club <> '$club' order by saison desc";
+$query5 ="SELECT * FROM athletes where date_naiss = '$date_naissance' and club = '$club' order by saison desc";
 $result5 = mysql_query($query5,$connexion);
 $row5 = mysql_fetch_assoc($result5);
 $test = 0;

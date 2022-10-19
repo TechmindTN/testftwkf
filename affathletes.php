@@ -317,7 +317,9 @@ $club = $_SESSION['club'];
                                 <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
                                 <h1 class="h3 mb-2 text-gray-800"><?=$_TXT[24]?></h1>
                                
-
+<td><p style="page-break-before:always">
+<br>
+<input type="button" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm" value="Imprimer" onClick="printthis()"></td>
 <?php  
 $nbr=1;
 	   	include('connect.php');
@@ -334,7 +336,7 @@ if (isset($_POST['club'])) {
 if (isset($_POST['age'])) {
   $age1 = (get_magic_quotes_gpc()) ? $_POST['age'] : addslashes($_POST['age']);
 }
-	 
+
 	 
     if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")or($club == "dtn")or($club == "DTN")or($club == "Dtn")) {
 
@@ -349,6 +351,9 @@ $row2 = mysql_fetch_assoc($result2);
 
 	  ?>
  <form name="stat" method="post" action="">
+
+
+ 
  <?=$_TXT[12]?><select class="custom-select col-sm-4" name="club" size="1" id="club" tabindex="9">
      <option><?php echo $club1;?></option>
      <?php
@@ -419,6 +424,7 @@ $row = mysql_fetch_assoc($result);
 ?>
 
 </div>
+<div id="divprint">
 <div class="card-body">
                             <div class="table-responsive">
 <table  class="table table-bordered" width="100%" id="dataTable">
@@ -541,13 +547,60 @@ if (($club <> "CENTRE")and($club <> "Centre")and($club <> "centre") and ($club <
 ?> 
 </tbody>
 </table>
-</div></div></div></div></div>
+</div></div></div></div></div></div>
 </div>
 </div>
 <div id="lang" style="display:none"><?php echo $_SESSION["lang"] ?></div>
 <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+    <script>
+   function printthis(){
+
+    // divprint=document.getElementById("divprint").innerHTML;
+    // divprint.document.getElementById('datatable').id="";
+        // pprint= document.getElementById("pprint").innerHTML;
+    //  dataTable=document.getElementById("dataTable").innerHTML
+    //  dataTable.id="blabla";
+
+    original=document.getElementById("wrapper").innerHTML;
+            var a = window.open('', '', 'height=1000, width=1000');
+            // document.getElementById('dataTable').removeAttribute('id');
+            
+            a.document.write('<html>');
+            a.document.write(`<head>
+         
+    <style>
+    @page{
+        size:landscape;
+        
+    }
+    table, th, td{
+        border: 1px solid black;
+        table-layout: auto;
+        border-collapse: collapse;
+    },
+   
+    </style>
+</HEAD>`)
+            a.document.write('<body > ');
+            // a.document.write(pprint);
+            // a.document.write(dataTable);
+            divprint=document.getElementById("divprint").innerHTML;
+
+            a.document.write(divprint);
+            // a.document.getElementById('dataTable').id="bla";
+            a.document.write('</body></html>');
+            a.document.close();
+            // a.document.style.size='landscape';
+            a.print();
+    // divprint.print();
+    // document.body.innerHTML=divprint;
+    // window.print();
+    // document.body.innerHTML=original;
+    // window.print();
+   } 
+    </script>
 <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

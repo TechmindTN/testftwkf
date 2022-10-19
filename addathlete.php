@@ -149,7 +149,7 @@ $size2=1;}
 
 if ((($extensionbor == '.jpg')or($extensionbor == ".JPG"))and ($size3<1024000)) {
 $photobor = $code.'.jpg';
-$uploaddir ='./photobor/'.$saison . '/';
+$uploaddir ='./photobor/'.$saison .'/';
 move_uploaded_file($_FILES['photobor']['tmp_name'], $uploaddir.$photobor);
 }
 else {
@@ -174,8 +174,8 @@ $size4=1;
 
 
 
-if (($club <> '')and($nom <> '')and($prenom <> '')and($nationalite <> '')and($jour <> '')and($mois <> '')and($sport <> '')and($sexe <> '')and($annee <> '')and($cin <> '')and($photo <> '')and($photoid <> '')and($photobor <> '')and (($extension == ".jpg") or ($extension == ".JPG"))and (($extensionid == ".jpg") or ($extensionid == ".JPG"))and (($extensionbor == ".jpg") or ($extensionbor == ".JPG")))
-{
+// if (($club <> '')and($nom <> '')and($prenom <> '')and($nationalite <> '')and($jour <> '')and($mois <> '')and($sport <> '')and($sexe <> '')and($annee <> '')and($cin <> '')and($photo <> '')and($photoid <> '')and($photobor <> '')and (($extension == ".jpg") or ($extension == ".JPG"))and (($extensionid == ".jpg") or ($extensionid == ".JPG"))and (($extensionbor == ".jpg") or ($extensionbor == ".JPG")))
+// {
 	if ($code1 == 0) {
 
 $query ="INSERT INTO `athletess` ( `saison` ,`n_lic`, `cin`, `nom`, `prenom` , `sexe` , `date_naiss` , `club` , `ligue`, `age` , `sport`  ,  `photo`,  `photoid` , `date_saisie`, `nationalite` ) 
@@ -193,7 +193,7 @@ window.location.href="affathletes.php?club<?php echo "=$club";?>";
 </script>
 
 <?php 
-}
+//}
 
 ?>
 

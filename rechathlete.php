@@ -293,6 +293,7 @@ $club=$row['club'];
 $id = "";
 if (isset($_GET['id'])) {
   $id = (get_magic_quotes_gpc()) ? $_GET['id'] : addslashes($_GET['id']);//
+
 }
 if (isset($_POST['id'])) {
   $id = (get_magic_quotes_gpc()) ? $_POST['id'] : addslashes($_POST['id']);
@@ -320,7 +321,11 @@ if (isset($_POST['id'])) {
 
 
  if (($id <> '')){
-$query1 = "SELECT * FROM athletes WHERE n_lic = '$id'  order by saison desc";
+    if (($club == "ADMIN")or($club == "admin")or($club == "Admin") or($club=="dtn")or($club=="DTN")or($club=="Dtn")){
+$query1 = "SELECT * FROM athletes WHERE n_lic = '$id'  order by saison desc";}
+else{
+    $query1 = "SELECT * FROM athletes WHERE n_lic = '$id' and club='$club'  order by saison desc";
+}
 $result1 = mysql_query($query1,$connexion);
 $totalRows = mysql_num_rows($result1);
 $row1 = mysql_fetch_assoc($result1);
@@ -447,8 +452,8 @@ if (($totalRows > 0)){
      
       <td align="left"><img src="./photoid/<?php echo $id. ".jpg";?>" width="33" height="50"></td>
    
-      <td  align="left"><img src="./photobor/<?php echo $saison;?>/<?php echo $code. ".jpg";?>" alt="" width="33" height="50"></td>
-      <td  align="left"><img src="./photoeng/<?php echo $saison;?>/<?php echo $code. ".jpg";?>" alt="" width="33" height="50"></td>
+      <td  align="left"><img src="./photobor/<?php echo $saison;?>/<?php echo $id. ".jpg";?>" alt="" width="33" height="50"></td>
+      <td  align="left"><img src="./photoeng/<?php echo $saison;?>/<?php echo $id. ".jpg";?>" alt="" width="33" height="50"></td>
     </tr></thead>
   </table></div></div>
 <input name="aphoto" type="hidden" id="aphoto" size="1" value ="<?php echo $photo;?>">

@@ -424,7 +424,7 @@ $annee= substr("$date_naiss", 0, 4);
   
                                   </div>
                                   </div>
-  <table >
+  <!-- <table >
         
 
    
@@ -433,21 +433,13 @@ $annee= substr("$date_naiss", 0, 4);
     <tr>
       <td align="left">&nbsp;</td>
 
-<?php if ($obs == "") {?>
       <td align="left"><img src="./photot/<?php echo $code. ".jpg";?>" width="33" height="50"></td>
-<?php }?>
-<?php if ($obs <> "") {?>
       <td align="left"><img src="./photo/<?php echo $code. ".jpg";?>" width="33" height="50"></td>
-<?php }?>
 
       <td align="left">&nbsp;</td>
 
-<?php if ($obs == "") {?>
       <td align="left"><img src="./photoidt/<?php echo $code. ".jpg";?>" width="33" height="50"></td>
-<?php }?>
-<?php if ($obs <> "") {?>
       <td align="left"><img src="./photoid/<?php echo $code. ".jpg";?>" width="33" height="50"></td>
-<?php }?>
 
       <td>&nbsp;</td>
       <td align="left"><img src="./photobor/<?php echo $saison;?>/<?php echo $code. ".jpg";?>" alt="" width="33" height="50"></td>
@@ -455,7 +447,7 @@ $annee= substr("$date_naiss", 0, 4);
       <td align="left"><img src="./photoeng/<?php echo $saison;?>/<?php echo $code. ".jpg";?>" alt="" width="33" height="50"></td>
       <td colspan="3" align="center">&nbsp;</td>
     </tr>
-  </table>
+  </table> -->
 
 
 <p align="center">

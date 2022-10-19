@@ -358,9 +358,15 @@ $queryy ="SELECT count(*) FROM athletes where club = '$club1' and saison = '$sai
 }
 $resulty = mysql_query($queryy,$connexion);
 $rowy = mysql_fetch_row($resulty);
+  
+?>
+<td><p style="page-break-before:always">
+<br>
+<input type="button" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm" value="Imprimer" onClick="printthis()"></td>
 
-    if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")) {
+   <?php if (($club=="admin")or($club=="ADMIN")or($club=="Admin") or ($club == "CENTRE")or($club == "Centre")or($club == "centre") or ($club == "NORD")or($club == "Nord")or($club == "nord") or ($club == "SUD")or($club == "Sud")or($club == "sud")) {
 	?>
+
    <a href ='liste.php' class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i><?=$_TXT[18]?></a>
  
@@ -385,7 +391,10 @@ $row1 = mysql_fetch_assoc($result1);
  <form name="stat" method="post" action="">
 
 
-                <table><tr><td> <?=$_TXT[0]?></td> 
+                <table><tr>
+                    
+                
+                <td> <?=$_TXT[0]?></td> 
    <td><select name="sais" size="1" id="sais" tabindex="9" class="custom-select " >
         <option></option>
                       <?php
@@ -441,6 +450,7 @@ $nbr=1
 <br>
 
 
+<div id="divprint">
 
 <div class="card-body">
                             <div class="table-responsive">
@@ -528,10 +538,11 @@ if (file_exists($filename)) {
 
  
     </td>
+    <td>
     <?PHP 
       if (($club=="admin")or($club=="ADMIN")or($club=="Admin")) { ?>
      
-      <td>
+      
         <div align="center">
           <a href ='updathletes.php?code<?php echo "=$row[n_lic]";?>&saison<?php echo "=$row[saison]";?>&club<?php echo "=$club";?>'><b><?=$_TXT[21]?></b></a>
 
@@ -542,7 +553,12 @@ if (file_exists($filename)) {
    
      
         
-        </td>   <?PHP  } ?> 
+           <?PHP  } ?> 
+           <div align="center">
+          <a href ='rechathlete.php?id<?php echo "=$row[n_lic]";?>&club<?php echo "=$club";?>'><b>Renouvellement</b></a>
+
+        </div>
+           </td>
  
   </tr>
 <?php					}while	 ($row=mysql_fetch_assoc($result)); 
@@ -552,7 +568,7 @@ if (file_exists($filename)) {
 
 </table>
 </div>
-</div>
+</div></div>
 <p>&nbsp;</p>
 <?php
 //if ((($pers == null)and ($federation != "المركز الوطني لإعداد النخبة") and ($federation != "المراكز الإقليمية")) or ($tache =="ممرن وطني")){ 
@@ -562,6 +578,53 @@ if (file_exists($filename)) {
 </div>
 </div>
 </div>
+<script>
+   function printthis(){
+
+    // divprint=document.getElementById("divprint").innerHTML;
+    // divprint.document.getElementById('datatable').id="";
+        // pprint= document.getElementById("pprint").innerHTML;
+    //  dataTable=document.getElementById("dataTable").innerHTML
+    //  dataTable.id="blabla";
+
+    original=document.getElementById("wrapper").innerHTML;
+            var a = window.open('', '', 'height=1000, width=1000');
+            // document.getElementById('dataTable').removeAttribute('id');
+            
+            a.document.write('<html>');
+            a.document.write(`<head>
+         
+    <style>
+    @page{
+        size:landscape;
+        
+    }
+    table, th, td{
+        border: 1px solid black;
+        table-layout: auto;
+        border-collapse: collapse;
+    },
+   
+    </style>
+</HEAD>`)
+            a.document.write('<body > ');
+            // a.document.write(pprint);
+            // a.document.write(dataTable);
+            divprint=document.getElementById("divprint").innerHTML;
+
+            a.document.write(divprint);
+            // a.document.getElementById('dataTable').id="bla";
+            a.document.write('</body></html>');
+            a.document.close();
+            // a.document.style.size='landscape';
+            a.print();
+    // divprint.print();
+    // document.body.innerHTML=divprint;
+    // window.print();
+    // document.body.innerHTML=original;
+    // window.print();
+   } 
+    </script>
 <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
